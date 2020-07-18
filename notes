@@ -1,0 +1,31 @@
+Title:
+
+
+Description:
+
+  Health tracker - covid outbreak
+
+User Story:
+
+  AS A concerned citizen
+  I WANT to track covid cases near myself and my family
+  SO THAT I know how at risk we are
+  
+Possible Functionalities:
+
+  enter a time frame to look
+  enter a location
+
+Wireframe (due Tuesday):
+
+
+APIs:
+
+  Covid-19 APIS:
+  https://api.coronatracker.com/
+  https://covid19api.com/
+  
+
+Task Breakdown:
+
+
