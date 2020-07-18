@@ -1,9 +1,10 @@
 Title:
 
+  Responsive Covid-19 Tracker
 
 Description:
-
-  Health tracker - covid outbreak
+  
+  A health tracker that allows users to see the worst ten states prepopulated or search for their state to see covid-19 statistics.
 
 User Story:
 
@@ -11,10 +12,17 @@ User Story:
   I WANT to track covid cases near myself and my family
   SO THAT I know how at risk we are
   
-Possible Functionalities:
+Acceptance Criteria:
 
-  enter a time frame to look
-  enter a location
+  WHEN the page loads
+  THEN the landing page displays the worst ten states statistics
+  WHEN I click one of the states I see more statistics on that state
+  OR IF I search a new state I see statistics on that state
+  STATISTICS shown are total cases, new cases, total deaths, new deaths, and *maybe testing centers* etc
+  WHEN I navigate to the HELP page 
+  THEN I see a form to check my symptoms 
+  IF I check enough then it recommends I seek medical advice
+  
 
 Wireframe (due Tuesday):
 
@@ -24,8 +32,32 @@ APIs:
   Covid-19 APIS:
   https://api.coronatracker.com/
   https://covid19api.com/
+  https://covidtracking.com/api/v1/us/daily.json
   
 
 Task Breakdown:
 
 
+
+
+REQUIREMENTS:
+
+- Must use at least two server-side APIS
+- Must use a CSS framework other than Bootstrap
+- Use at least one new third-party API
+- Must have a polished, mobile-first UI
+- Must meet good quality coding standards (indentation, scoping, naming, etc.)
+- Does NOT use alerts, confirms, or prompts (look into modals). 
+- Must be deployed to GitHub Pages
+- Must be interactive (i.e: accept and respond to user input)
+
+ELEVATOR PITCH:
+  Total presentation time approx. 10 minutes
+  Elevator pitch: a one minute description of your application
+  Concept: What is your user story? What was your motivation for development?
+  Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
+  Demo: Show your stuff!
+  Directions for Future Development
+  Links to to the deployed application and the GitHub repository
+
+https://docs.google.com/document/d/1BbagxhbYBom-1Eewcer9cOOSZGZoQ6tsG3_kfrHP0Nw/edit?usp=sharing
