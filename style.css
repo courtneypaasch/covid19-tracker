@@ -1,0 +1,14 @@
+.field {
+   padding-left: 33%;
+   padding-right: 33%;
+
+}
+
+.worst {
+    width: 100%;
+}
+.card {
+    float: left;
+    width: 18%;
+    padding: 1%;
+}
