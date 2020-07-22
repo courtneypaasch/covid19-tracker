@@ -13,26 +13,29 @@
 
 <body>
     <header>
-        <div class="pure-menu pure-menu-horizontal">
-            <a href="#" class="pure-menu-heading pure-menu-link">Responsive Covid-19 Tracker</a>
+        <div id="header" class="pure-menu pure-menu-horizontal">
+            <a href="#" class="pure-menu-heading pure-menu-link">Real Time Covid-19 Tracker</a>
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
                     <a href="#" class="pure-menu-link">Home</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Search</a>
+                    <a href="#" class="pure-menu-link">CDC Updates</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Helpful Resources</a>
+                    <a href="#" class="pure-menu-link">Symptoms</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Helpful Links</a>
                 </li>
             </ul>
         </div>
     </header>
     <main>
-        <!-- center this to page -->
+        <br>
         <div class="ui form">
             <div class="field">
-                <label>Select your State:</label>
+                <label>Select a State to See Current Stats:</label>
                 <select id="multi-state" class="pure-input-1-2">
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -88,284 +91,214 @@
                 </select>
             </div>
         </div>
-        <div class=worst>
-            <div class="ui card">
-                <div class="content">
-                    <div class="header">Project Timeline</div>
-                </div>
-                <div class="content">
-                    <h4 class="ui sub header">Activity</h4>
-                    <div class="ui small feed">
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
+        <div class="worst-five-states hide">
+            <h2>Five States with the Most Cases</h2>
+            <hr>
+            <div id="top" class="ui grid container">
+                <div class="six column row centered">
+                    <div class="ui card column state">
+                        <div class="content">
+                            <div class="header headerIndex0">State #0</div>
+                        </div>
+                        <div class="content">
+                            <img class="imgIndex0" scr="" alt="state-outline">
+                            <div class="ui small feed">
+                                <h4 class="ui sub header">Total Cases:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="totalCasesIndex0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="ui sub header">New Cases:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="newCaseIndex0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="ui sub header">Total Deaths:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="totalDeathIndex0">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
-                                </div>
-                            </div>
+                        <div class="extra content">
+                            <button class="ui button">See More</button>
                         </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Helen Troy</a> added two pictures
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui button">Join Project</button>
-                </div>
 
-            </div>
-            <div class="ui card">
-                <div class="content">
-                    <div class="header">Project Timeline</div>
-                </div>
-                <div class="content">
-                    <h4 class="ui sub header">Activity</h4>
-                    <div class="ui small feed">
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Helen Troy</a> added two pictures
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui button">Join Project</button>
-                </div>
-            </div>
-            <div class="ui card">
-                <div class="content">
-                    <div class="header">Project Timeline</div>
-                </div>
-                <div class="content">
-                    <h4 class="ui sub header">Activity</h4>
-                    <div class="ui small feed">
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
+                    <div class="ui card column state">
+                        <div class="content">
+                            <div class="header headerIndex1">State #1</div>
+                        </div>
+                        <div class="content">
+                            <img class="imgIndex1" scr="" alt="state-outline">
+                            <div class="ui small feed">
+                                <h4 class="ui sub header">Total Cases:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="totalCasesIndex1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="ui sub header">New Cases:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="newCaseIndex1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="ui sub header">Total Deaths:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="totalDeathIndex1">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
-                                </div>
-                            </div>
+                        <div class="extra content">
+                            <button class="ui button">See More</button>
                         </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Helen Troy</a> added two pictures
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui button">Join Project</button>
-                </div>
-            </div>
-            <div class="ui card">
-                <div class="content">
-                    <div class="header">Project Timeline</div>
-                </div>
-                <div class="content">
-                    <h4 class="ui sub header">Activity</h4>
-                    <div class="ui small feed">
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Helen Troy</a> added two pictures
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui button">Join Project</button>
-                </div>
-            </div>
-            <div class="ui card">
-                <div class="content">
-                    <div class="header">Project Timeline</div>
-                </div>
-                <div class="content">
-                    <h4 class="ui sub header">Activity</h4>
-                    <div class="ui small feed">
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Helen Troy</a> added two pictures
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui button">Join Project</button>
-                </div>
-            </div>
-            <div class="ui card">
-                <div class="content">
-                    <div class="header">Project Timeline</div>
-                </div>
-                <div class="content">
-                    <h4 class="ui sub header">Activity</h4>
-                    <div class="ui small feed">
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Helen Troy</a> added two pictures
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui button">Join Project</button>
-                </div>
 
-            </div>
-            <div class="ui card">
-                <div class="content">
-                    <div class="header">Project Timeline</div>
-                </div>
-                <div class="content">
-                    <h4 class="ui sub header">Activity</h4>
-                    <div class="ui small feed">
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Helen Troy</a> added two pictures
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui button">Join Project</button>
-                </div>
-            </div>
-            <div class="ui card">
-                <div class="content">
-                    <div class="header">Project Timeline</div>
-                </div>
-                <div class="content">
-                    <h4 class="ui sub header">Activity</h4>
-                    <div class="ui small feed">
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
+                    <div class="ui card column state">
+                        <div class="content">
+                            <div class="header headerIndex2">State #2</div>
+                        </div>
+                        <div class="content">
+                            <img class="imgIndex2" scr="" alt="state-outline">
+                            <div class="ui small feed">
+                                <h4 class="ui sub header">Total Cases:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="totalCasesIndex2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="ui sub header">New Cases:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="newCaseIndex2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="ui sub header">Total Deaths:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="totalDeathIndex2">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
-                                </div>
-                            </div>
+                        <div class="extra content">
+                            <button class="ui button">See More</button>
                         </div>
-                        <div class="event">
-                            <div class="content">
-                                <div class="summary">
-                                    <a>Helen Troy</a> added two pictures
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui button">Join Project</button>
+                    <div class="ui card column state">
+                        <div class="content">
+                            <div class="header headerIndex3">State #3</div>
+                        </div>
+                        <div class="content">
+                            <img class="imgIndex3" scr="" alt="state-outline">
+                            <div class="ui small feed">
+                                <h4 class="ui sub header">Total Cases:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="totalCasesIndex3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="ui sub header">New Cases:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="newCaseIndex3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="ui sub header">Total Deaths:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="totalDeathIndex3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <button class="ui button">See More</button>
+                        </div>
+
+                    </div>
+                    <div class="ui card column state">
+                        <div class="content">
+                            <div class="header headerIndex4">State #4</div>
+                        </div>
+                        <div class="content">
+                            <img class="imgIndex4" scr="" alt="state-outline">
+                            <div class="ui small feed">
+                                <h4 class="ui sub header">Total Cases:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="totalCasesIndex4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="ui sub header">New Cases:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="newCaseIndex4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="ui sub header">Total Deaths:</h4>
+                                <div class="event">
+                                    <div class="content">
+                                        <div class="totalDeathIndex4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <button class="ui button">See More</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+        <div class="seached-state">
 
+            <div id="top" class="ui grid container card">
+                <div class="content">
+                    <h2><span class="state-searched">"State Searched"</span> Current Statistics</h2>
+                    <hr>
+                </div>
+                <div class="three column row ">
+
+                    <div class="column">
+                        <img class="imgIndex0" scr="" alt="state-outline">
+                    </div>
+                    <div class="column">
+                        <div class="searchedStats">Total Cases:</div><br>
+                        <div class="searchedStats">New Cases:</div><br>
+                        <div class="searchedStats">Total Deaths:</div><br>
+                    </div>
+                    <div class="column">
+                        <div class="searchedStats">New Deaths:</div><br>
+                        <div class="searchedStats">Hospital Capacity:</div><br>
+                        <div class="searchedStats">Other data TBD:</div><br>
+                    </div>
+                </div>
+    </main>
+    <div id="footer"> </div>
 </body>
 
 </html>

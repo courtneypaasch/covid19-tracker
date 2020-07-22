@@ -1,14 +1,56 @@
+header {
+    background-color: rgb(70, 119, 119);
+    height: 70px;
+    font-size: large;
+}
+
+.pure-menu-link {
+    padding-top: 25px;
+}
+
+.pure-menu-link {
+    color: white;
+}
+
+body {
+    background-color:  rgba(70, 119, 119, 0.105);
+}
+
+main {
+    padding-bottom : 40px ;
+}
+
+.hide {
+    display: none;
+}
 .field {
    padding-left: 33%;
    padding-right: 33%;
 
 }
 
-.worst {
-    width: 100%;
+h2 {
+    text-align: center;
+    padding-top: 2%;
 }
-.card {
-    float: left;
-    width: 18%;
-    padding: 1%;
+
+hr {
+    width: 90%;
 }
+.header {
+    text-align: center;
+}
+
+#top {
+    margin-top: 2%;
+}
+
+#footer {
+    height : 40px ;
+    text-align : center ;
+    width : 100% ;
+    background-color :  rgb(70, 119, 119);
+    position : fixed ;
+    bottom : 0px ;
+    color: white;
+  }
