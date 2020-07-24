@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid-19 Tracker</title>
@@ -18,7 +19,8 @@
                 <a href="#" class="pure-menu-heading custom-menu-brand">Real Time Covid-19 Tracker</a>
                 <a href="#" class="custom-menu-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
             </div>
-            <div class="pure-menu pure-menu-horizontal custom-menu pure-menu-scrollable custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
+            <div class="pure-menu pure-menu-horizontal custom-menu pure-menu-scrollable custom-menu-bottom custom-menu-tucked"
+                id="tuckedMenu">
                 <div class="custom-menu-screen"></div>
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item">
@@ -35,9 +37,66 @@
                     </li>
                 </ul>
             </div>
-        </header>
+    </header>
     <main>
-       
+        <div class="ui grid container">
+
+            <div class="two column row ">
+                <div class="ui column">
+
+                    <a class="twitter-timeline" data-width="500" data-height="500"
+                        href="https://twitter.com/CDCgov?ref_src=twsrc%5Etfw">Tweets by CDCgov</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div class="ui column">
+                    <div class="email connect">
+                        <div class="">
+                            <h2>Get Email Updates</h2>
+                            <hr>
+                            <br>
+                            <p>To receive email updates about COVID-19, enter your email address:</p>
+                            <form id="govd-subscribe"
+                                action="https://tools.cdc.gov/campaignproxyservice/subscriptions.aspx" method="GET">
+                                <div>
+                                    <label for="gov-d-email"> <span class="sr-only">Email
+                                            Address:</span>
+                                        <input id="gov-d-email" name="userID" type="email" class="form-control"
+                                            placeholder="Email Address" required="required">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </label>
+                                </div>
+                                <div>
+                                    <a class="explain" href="https://www.cdc.gov/emailupdates/">What is this?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                
+                    <br>
+                    <br>
+    
+                    <div class="connect">
+                        <div class="email">
+                            <h2>More ways to reach out to the CDC</h2>
+                            <hr>
+                            <div class=""></div>
+                            <ul class="">
+                                <li class="social"> <a href="https://www.facebook.com/CDC" class="social-button fa fa-facebook"> Facebook </a></li>
+                                <li class="social"> <a href="https://www.instagram.com/CDCgov/" class="social-button fa fa-instagram"> Instagram </a></li>
+                                <li class="social"> <a href="https://www.cdc.gov/" class="social-button fa fa-desktop"> Website</a></li>
+                                <li class="social"> <a href="https://wwwn.cdc.gov/DCS/ContactUs/Form" class="social-button fa fa-envelope"> Email</a></li>
+                            </ul>
+                        </div>
+    
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        </div>
+        </div>
+
     </main>
     <div id="footer"> <a href="https://github.com/courtneypaasch/hidden-hippos" class="source">View Source Code on
             GitHub</a> </div>
@@ -45,12 +104,11 @@
 
 <script>
     (function (window, document) {
-    document.getElementById('toggle').addEventListener('click', function (e) {
-        document.getElementById('tuckedMenu').classList.toggle('custom-menu-tucked');
-        document.getElementById('toggle').classList.toggle('x');
-    });
+        document.getElementById('toggle').addEventListener('click', function (e) {
+            document.getElementById('tuckedMenu').classList.toggle('custom-menu-tucked');
+            document.getElementById('toggle').classList.toggle('x');
+        });
     })(this, this.document);
-    </script>
-
+</script>
 
 </html>
