@@ -9,14 +9,21 @@ $('document').ready(function () {
 
     function topFIve() {
 
-        var state = $('.pure-input-1-2').val(); 
-        console.log(state);
+
+
+        // First we call the api that will show the 50 states with the data 
+
+        // We need to make a for loop to go through all the "postive" in each array 
+
+        // 
 
         $.ajax({
-            url: 'https://covidtracking.com/api/v1/states/'+ state +'/current.json',
+            url: 'https://covidtracking.com/api/v1/states/current.json',
             method: 'GET'
         }).then(function (response) {
             console.log(response);
+
+
 
             var totalCase = response.positive;
             var hOne = $('<h6>').text(totalCase);
