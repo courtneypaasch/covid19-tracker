@@ -17,7 +17,8 @@ $('document').ready(function () {
             url: 'https://covidtracking.com/api/v1/states/current.json',
             method: 'GET'
         }).then(function (response) {
-            console.log(response);
+            //console.log(response);
+            console.log(response[0]);
             //console.log(response[1].state);
             // console.log(response[1].positive);
             // console.log(response[1].total);
@@ -31,11 +32,12 @@ $('document').ready(function () {
                 // make a new Object, store ONLY THE VALUES YOU WANT {state: response[i].state, positive: response[i].positive}
                 // Then you PUSH this new object into an array.
                 var sanitizedData = new Object();
-                sanitizedData["state"] = response[i].state;
-                sanitizedData["positive"] = response[i].positive;
-                sanitizedData["total"] = response[i].total;
-                sanitizedData["death"] = response[i].death;
                 sanitizedData["date"] = response[i].date;
+                sanitizedData["state"] = response[i].state;
+                sanitizedData["total"] = response[i].total;
+                sanitizedData["positive"] = response[i].positive;
+                sanitizedData["death"] = response[i].death;
+
                 covidDATA.push(sanitizedData);
                 //console.log(sanitizedData);
                 //console.log(covidDATA);
@@ -50,6 +52,7 @@ $('document').ready(function () {
                 var casesA = a.total;
                 var casesB = b.total;
 
+                //descending order sort so that if the first number is greater than the second, then want to keep highest first
                 if (casesA > casesB) {
                     comparison = -1;
                 } else if (casesA < casesB) {
@@ -59,6 +62,7 @@ $('document').ready(function () {
             }
 
             //Here is where we call the sort function to sort our covidDATA array based on the total number of cases
+            //higher number will be first - descending order sorting
             covidDATA.sort(compare);
             console.log(covidDATA);
 
