@@ -39,9 +39,7 @@ $('document').ready(function () {
                 covidDATA.push(sanitizedData);
                 //console.log(sanitizedData);
                 //console.log(covidDATA);
-
             }
-
 
             console.log(covidDATA[1].total);
 
@@ -67,6 +65,7 @@ $('document').ready(function () {
             // creating a for loop to pick the top 5 states with the maximum count and displaying it in the front page
             for (var i = 0; i < 5; i++) {
 
+                //we will be plugging in the counts data into index.html here
                 //var totalCase = response.positive;
                 var totalCase = covidDATA[i].total;
                 console.log(totalCase);
@@ -86,7 +85,6 @@ $('document').ready(function () {
             }
         });
     }
-
     topFIve();
     // });
 });
