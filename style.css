@@ -35,6 +35,11 @@
     padding-bottom: .5em;
 }
 
+.date {
+    float: right;
+    padding: 2%;
+}
+
 /*format real time covid-19 tracker*/
 .custom-menu-brand {
     display: block;
