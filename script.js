@@ -18,7 +18,7 @@ $('document').ready(function () {
             method: 'GET'
         }).then(function (response) {
             //console.log(response);
-            console.log(response[0]);
+            //console.log(response[0]);
             //console.log(response[1].state);
             // console.log(response[1].positive);
             // console.log(response[1].total);
@@ -34,8 +34,11 @@ $('document').ready(function () {
                 var sanitizedData = new Object();
                 sanitizedData["date"] = response[i].date;
                 sanitizedData["state"] = response[i].state;
-                sanitizedData["total"] = response[i].total;
+                //sanitizedData["total"] = response[i].total;
+                //response-positive gives the total number of positive cases in the state
                 sanitizedData["positive"] = response[i].positive;
+                sanitizedData["newcases"] = response[i].totalTestResultsIncrease;
+                //total number of deaths in the state
                 sanitizedData["death"] = response[i].death;
 
                 covidDATA.push(sanitizedData);
@@ -49,8 +52,8 @@ $('document').ready(function () {
             function compare(a, b) {
                 var comparison = 0;
                 //here we can change the parameter that we want to sort by.. note..this is number sort
-                var casesA = a.total;
-                var casesB = b.total;
+                var casesA = a.positive;
+                var casesB = b.positive;
 
                 //descending order sort so that if the first number is greater than the second, then want to keep highest first
                 if (casesA > casesB) {
@@ -63,33 +66,70 @@ $('document').ready(function () {
 
             //Here is where we call the sort function to sort our covidDATA array based on the total number of cases
             //higher number will be first - descending order sorting
-            covidDATA.sort(compare);
-            console.log(covidDATA);
+            sortedCovidDATA = covidDATA.sort(compare);
+            console.log(sortedCovidDATA);
 
             // creating a for loop to pick the top 5 states with the maximum count and displaying it in the front page
-            for (var i = 0; i < 5; i++) {
 
-                //we will be plugging in the counts data into index.html here
-                //var totalCase = response.positive;
-                var totalCase = covidDATA[i].total;
-                console.log(totalCase);
-                var hOne = $('<h6>').text(totalCase);
-                $('.totalCasesIndex0').append(hOne);
 
-                //var newCase = response.positiveIncrease;
-                var newCase = covidDATA[i].positive;
-                var hTwo = $('<h6>').text(newCase);
-                $('.newCaseIndex0').append(hTwo);
+        //     //for (var i = 0; i < 5; i++) {
 
-                // var totalDeath = response.death;
-                var totalDeath = covidDATA[i].death;
-                var hThree = $('<h6>').text(totalDeath);
-                $('.totalDeathIndex0').append(hThree);
+        //         //we will be plugging in the counts data into index.html here
+        //         //var totalCase = response.positive;
+        //         var totalCase = covidDATA[i].positive;
+        //         console.log(totalCase);
+        //         var hOne = $('<h6>').text(totalCase);
 
-            }
-        });
+        //         $('.totalCasesIndex0').append(hOne);
+
+        //         //var newCase = response.positiveIncrease;
+        //         var newCase = covidDATA[i].newcases;
+        //         var hTwo = $('<h6>').text(newCase);
+        //         $('.newCaseIndex0').append(hTwo);
+
+        //         // var totalDeath = response.death;
+        //         var totalDeath = covidDATA[i].death;
+        //         var hThree = $('<h6>').text(totalDeath);
+        //         $('.totalDeathIndex0').append(hThree);
+        //    // }
+
+        //top state 1
+       // $('.headerIndex0').append(sortedCovidDATA[0].state);
+        $('.headerIndex0').append( $('<h2>').text(sortedCovidDATA[0].state));
+       // $('.totalCasesIndex0').append(sortedCovidDATA[0].positive);
+        $('.totalCasesIndex0').append( $('<h4>').text(sortedCovidDATA[0].positive));
+       // $('.newCaseIndex0').append(sortedCovidDATA[0].newcases);
+        $('.newCaseIndex0').append( $('<h4>').text(sortedCovidDATA[0].newcases));
+        $('.totalDeathIndex0').append( $('<h4>').text(sortedCovidDATA[0].death));
+
+        //top state 2
+        $('.headerIndex1').append( $('<h2>').text(sortedCovidDATA[1].state));
+         $('.totalCasesIndex1').append( $('<h4>').text(sortedCovidDATA[1].positive));
+         $('.newCaseIndex1').append( $('<h4>').text(sortedCovidDATA[1].newcases));
+         $('.totalDeathIndex1').append( $('<h4>').text(sortedCovidDATA[1].death));
+
+         //top state 3
+         $('.headerIndex2').append( $('<h2>').text(sortedCovidDATA[2].state));
+          $('.totalCasesIndex2').append( $('<h4>').text(sortedCovidDATA[2].positive));
+          $('.newCaseIndex2').append( $('<h4>').text(sortedCovidDATA[2].newcases));
+          $('.totalDeathIndex2').append( $('<h4>').text(sortedCovidDATA[2].death));
+
+          //top state 4
+          $('.headerIndex3').append( $('<h2>').text(sortedCovidDATA[3].state));
+           $('.totalCasesIndex3').append( $('<h4>').text(sortedCovidDATA[3].positive));
+           $('.newCaseIndex3').append( $('<h4>').text(sortedCovidDATA[3].newcases));
+           $('.totalDeathIndex3').append( $('<h4>').text(sortedCovidDATA[3].death));
+
+           //top state 5
+           $('.headerIndex4').append( $('<h2>').text(sortedCovidDATA[4].state));
+            $('.totalCasesIndex4').append( $('<h4>').text(sortedCovidDATA[4].positive));
+            $('.newCaseIndex4').append( $('<h4>').text(sortedCovidDATA[4].newcases));
+            $('.totalDeathIndex4').append( $('<h4>').text(sortedCovidDATA[4].death));
+        })
     }
     topFIve();
+
+
     // });
 });
 
