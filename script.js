@@ -5,6 +5,8 @@ $('document').ready(function () {
     // $('#search').on('click', function (event) {
     //     event.preventDefault();
 
+
+
     function topFIve() {
 
         // First we call the api that will show the 50 states with the data
@@ -18,7 +20,7 @@ $('document').ready(function () {
             method: 'GET'
         }).then(function (response) {
             //console.log(response);
-            //console.log(response[0]);
+            console.log(response[0]);
             //console.log(response[1].state);
             // console.log(response[1].positive);
             // console.log(response[1].total);
@@ -95,6 +97,8 @@ $('document').ready(function () {
 
         //top state 1
        // $('.headerIndex0').append(sortedCovidDATA[0].state);
+
+        $('.imgIndex0').attr("src",statePicList[sortedCovidDATA[0].state]);
         $('.headerIndex0').append( $('<h2>').text(sortedCovidDATA[0].state));
        // $('.totalCasesIndex0').append(sortedCovidDATA[0].positive);
         $('.totalCasesIndex0').append( $('<h4>').text(sortedCovidDATA[0].positive));
@@ -103,33 +107,59 @@ $('document').ready(function () {
         $('.totalDeathIndex0').append( $('<h4>').text(sortedCovidDATA[0].death));
 
         //top state 2
+        $('.imgIndex1').attr("src",statePicList[sortedCovidDATA[1].state]);
         $('.headerIndex1').append( $('<h2>').text(sortedCovidDATA[1].state));
          $('.totalCasesIndex1').append( $('<h4>').text(sortedCovidDATA[1].positive));
          $('.newCaseIndex1').append( $('<h4>').text(sortedCovidDATA[1].newcases));
          $('.totalDeathIndex1').append( $('<h4>').text(sortedCovidDATA[1].death));
 
          //top state 3
+         $('.imgIndex2').attr("src",statePicList[sortedCovidDATA[2].state]);
          $('.headerIndex2').append( $('<h2>').text(sortedCovidDATA[2].state));
           $('.totalCasesIndex2').append( $('<h4>').text(sortedCovidDATA[2].positive));
           $('.newCaseIndex2').append( $('<h4>').text(sortedCovidDATA[2].newcases));
           $('.totalDeathIndex2').append( $('<h4>').text(sortedCovidDATA[2].death));
 
           //top state 4
+          $('.imgIndex3').attr("src",statePicList[sortedCovidDATA[3].state]);
           $('.headerIndex3').append( $('<h2>').text(sortedCovidDATA[3].state));
            $('.totalCasesIndex3').append( $('<h4>').text(sortedCovidDATA[3].positive));
            $('.newCaseIndex3').append( $('<h4>').text(sortedCovidDATA[3].newcases));
            $('.totalDeathIndex3').append( $('<h4>').text(sortedCovidDATA[3].death));
 
            //top state 5
+           $('.imgIndex4').attr("src",statePicList[sortedCovidDATA[4].state]);
            $('.headerIndex4').append( $('<h2>').text(sortedCovidDATA[4].state));
             $('.totalCasesIndex4').append( $('<h4>').text(sortedCovidDATA[4].positive));
             $('.newCaseIndex4').append( $('<h4>').text(sortedCovidDATA[4].newcases));
             $('.totalDeathIndex4').append( $('<h4>').text(sortedCovidDATA[4].death));
+
+            //displaying the date for the data shown
+            $('.date').append( $('<h4>').text(sortedCovidDATA[0].date));
         })
     }
+
+    //function clickedstate
+    //toggle the searched-state to show
+    //dynamically using javascript --add a class
+
+
     topFIve();
 
+   //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
+    var statePicList = {
+        "CA":"./images/CA.png",
+        "FL":"./images/FL.png",
+        "NY":"./images/NY.png",
+        "NJ":"./images/NJ.png",
+        "TX":"./images/TX.png"
+    };
+    console.log(statePicList.CA);
 
-    // });
+   document.getElementById("uibutton").addEventListener("click",function(){
+    $(".searched-state").show();
+    $(".worst-five-states").hide();
+   });
+
 });
 
