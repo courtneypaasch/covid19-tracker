@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Covid-19 Questions</title>
+</head>
+
+<body>
+    <header>
+        <div id="header" class="custom-menu-wrapper">
+            <div class="pure-menu custom-menu custom-menu-top">
+                <a href="#" class="pure-menu-heading custom-menu-brand">Real Time Covid-19 Tracker</a>
+                <a href="#" class="custom-menu-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+            </div>
+            <div class="pure-menu pure-menu-horizontal custom-menu pure-menu-scrollable custom-menu-bottom custom-menu-tucked"
+                id="tuckedMenu">
+                <div class="custom-menu-screen"></div>
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item">
+                        <a href="index.html" class="pure-menu-link">Home</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="cdc-updates.html" class="pure-menu-link">CDC Updates</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="symptoms.html" class="pure-menu-link">Symptoms</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="Helpful-links.html" class="pure-menu-link">Helpful Links</a>
+                    </li>
+                </ul>
+            </div>
+    </header>
+
+    <main class="main-page">
+
+        <div class="ui menu" id="assessment">
+            <div class="header item">
+                Self Assessment
+            </div>
+        </div>
+        <div class="ui blue indicating progress" id="task">
+            <div class="now"></div>
+            <div class="label"></div>
+        </div>
+
+
+        <div class="ui container question-0" id="central-container">
+            <div class="row middle-row">
+                <div class="ui segment" id="segment" style="padding-top: 4em; width: 500rem; height: 20em;">
+                    <div class="ui  form">
+                        <div class="two fields">
+                            <div class="field" style="margin-top: 2.5vw;">
+                                <h3 style="font-size: 30px;">Are you answering for yourself or someone else?</h3>
+                            </div>
+                            <div class="field" id="button-alignment" style="margin-top: 3.5vw;">
+                                <div class="ui left floated button intro-myself" id="button-size">Myself</div>
+                                <div class="ui right floated button intro-someone" id="button-size">Someone</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ui container question-1" id="central-container" hidden>
+            <div class="row middle-row">
+                <div class="ui segment" id="segment">
+                    <div class="ui  form">
+                        <div class="two fields">
+                            <div class="field">
+                                <h3>Do you have any of the life-threateneing symptoms?</h3>
+                                <div class="ui  form">
+                                    <div class="ui checkbox">
+                                        <div class="ui checkbox" style="margin: 0.1em;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="low-risk">Bluish lips or
+                                                face</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1em;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="low-risk">Extreme difficulty
+                                                breathing
+                                                (such as gasping for air or being unable to talk without catching your
+                                                breath)</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1em;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="low-risk">Severe and
+                                                constant dizziness
+                                                or lightheadedness</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1rem;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="risk">Serious disorientation
+                                                (acting
+                                                confused)</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1rem;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="risk">Unconscious or very
+                                                difficult to wake up</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1rem;"> <input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="risk">Slurred speech or
+                                                difficulty speaking (new or
+                                                worsening)</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1rem;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="high-risk">Signs of low
+                                                blood pressure (too weak to
+                                                stand,
+                                                light headed, feeling cold, pale, clammy skin)</label>
+                                        </div>
+                                        
+                                        <div class="ui checkbox" style="margin: 0.1rem;"><input type="checkbox"
+                                            name="example" class="q1-neg-80"><label id="high-risk">Seizures</label>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field" id="button-alignment" style="margin-top: 6.5vw;">                               
+                                <div class="ui right floated button q1-next" id="button-size">Next</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui container question-1-1" id="central-container" hidden>
+            <div class="row middle-row">
+                <div class="ui segment" id="segment">
+                    <div class="ui  form">
+                        <div class="two fields">
+                            <div class="field">
+                                <h3>Do they have any of the life-threateneing symptoms?</h3>
+                                <div class="ui  form">
+                                    <div class="ui checkbox">
+                                        <div class="ui checkbox" style="margin: 0.1em;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="low-risk">Bluish lips or
+                                                face</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1em;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="low-risk">Extreme difficulty
+                                                breathing
+                                                (such as gasping for air or being unable to talk without catching your
+                                                breath)</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1em;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="low-risk">Severe and
+                                                constant dizziness
+                                                or lightheadedness</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1rem;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="risk">Serious disorientation
+                                                (acting
+                                                confused)</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1rem;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="risk">Unconscious or very
+                                                difficult to wake up</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1rem;"> <input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="risk">Slurred speech or
+                                                difficulty speaking (new or
+                                                worsening)</label>
+                                        </div>                                        
+                                        <div class="ui checkbox" style="margin: 0.1rem;"><input type="checkbox"
+                                                name="example" class="q1-neg-80"><label id="high-risk">Signs of low
+                                                blood pressure (too weak to
+                                                stand,
+                                                light headed, feeling cold, pale, clammy skin)</label>
+                                        </div>
+                                        <div class="ui checkbox" style="margin: 0.1rem;"><input type="checkbox"
+                                            name="example" class="q1-neg-80"><label id="high-risk">Seizures</label>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field" id="button-alignment" style="margin-top: 6.5vw;">                                
+                                <div class="ui right floated button q1-next-1" id="button-size">Next</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="ui container question-2" id="central-container" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment" style="height: 85%;">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field">
+                                    <h3 style="font-size: 30px !important;">What is your age?</h3>
+                                    <div class="ui form">
+                                        <div class="ui radio checkbox">
+                                            <div class="ui checkbox large" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-5"><label
+                                                    id="low-risk">18-29</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-5"><label
+                                                    id="low-risk">30-39</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-5"><label
+                                                    id="low-risk">40-49</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-10"><label
+                                                    id="risk">50-59</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-10"><label
+                                                    id="risk">60-64</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"> <input
+                                                    type="radio" name="example" class="q2-neg-10"><label
+                                                    id="risk">65-69</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-20"><label
+                                                    id="high-risk">70-79</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-20"><label
+                                                    id="high-risk">80+</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field" id="button-alignment" style="display: flexbox; margin-top: 15vw;">                                   
+                                    <div class="ui right floated button q2-next" id="button-size">Next</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="ui container question-2-1" id="central-container" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment" style="height: 85%;">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field">
+                                    <h3 style="font-size: 30px !important;">What is their age?</h3>
+                                    <div class="ui form">
+                                        <div class="ui radio checkbox">
+                                            <div class="ui checkbox large" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-5"><label
+                                                    id="low-risk">18-29</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-5"><label
+                                                    id="low-risk">30-39</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-5"><label
+                                                    id="low-risk">40-49</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-10"><label
+                                                    id="risk">50-59</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-10"><label
+                                                    id="risk">60-64</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"> <input
+                                                    type="radio" name="example" class="q2-neg-10"><label
+                                                    id="risk">65-69</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-20"><label
+                                                    id="high-risk">70-79</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem; font-size: 23px;"><input
+                                                    type="radio" name="example" class="q2-neg-20"><label
+                                                    id="high-risk">80+</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field" id="button-alignment" style="display: flexbox; margin-top: 15vw;">
+                                    
+                                    <div class="ui right floated button q2-next-1" id="button-size">Next</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-3" id="central-container" style="padding: 0px;" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment"
+                        style="margin: 0.1rem; width: 500rem; height: 55%; padding-top:5vw;">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field" style="margin-top: auto;">
+                                    <h3 style="font-size: 28px;">Are you feeling ill?</h3>
+                                </div>
+                                <div class="field" id="button-alignment">
+                                    <div class="ui left floated button q3-yes" id="button-size" style="width: 4rem;">Yes</div>
+                                    <div class="ui right floated button q3-no" id="button-size" style="width: 4rem">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-3-1" id="central-container" style="padding: 0px;" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment"
+                        style="margin: 0.1rem; width: 500rem; height: 55%; padding-top:5vw;">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field" style="margin-top: auto;">
+                                    <h3 style="font-size: 28px;">Are they feeling ill?</h3>
+                                </div>
+                                <div class="field" id="button-alignment">
+                                    <div class="ui left floated button q3-yes-1" id="button-size" style="width: 4rem;">Yes</div>
+                                    <div class="ui right floated button q3-no-1" id="button-size" style="width: 4rem">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-4" id="central-container" style="padding: 0px;" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment" style="margin: 0.1rem; width: 500rem; height: 65%;">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field" style="margin-top: auto;">
+                                    <h3 style="font-size: 24px; margin-top: 2em ;">In the two weeks before you felt
+                                        sick, did you have contact with someone diagnosed with COVID-19?</h3>
+                                </div>
+                                <div class="field" id="button-alignment" style="margin-top: 5em;">
+                                    <div class="ui left floated button q4-yes" id="button-size"
+                                        style="width: 4em; margin-right: 6vw;">Yes</div>
+                                    <div class="ui button q4-no" id="button-size" style="width: 4rem">No</div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-4-1" id="central-container" style="padding: 0px;"hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment" style="margin: 0.1rem; width: 500rem; height: 65%;">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field" style="margin-top: auto;">
+                                    <h3 style="font-size: 24px; margin-top: 2em ;">In the two weeks before they felt
+                                        sick, did they have contact with someone diagnosed with COVID-19?</h3>
+                                </div>
+                                <div class="field" id="button-alignment" style="margin-top: 5em;">
+                                    <div class="ui left floated button q4-yes-1" id="button-size"
+                                        style="width: 4em; margin-right: 6vw;">Yes</div>
+                                    <div class="ui button q4-no-1" id="button-size" style="width: 4rem">No</div>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui container question-5" id="central-container" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field">
+                                    <h3>Do you have any of the following (please select all that apply)?</h3>
+                                    <div class="ui form">
+                                        <div class="ui checkbox">
+                                            <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                    name="example" class="q5-neg-70"><label id="low-risk">Cough</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                    name="example" class="q5-neg-70"><label id="low-risk">Mild pr moderate difficulty
+                                                    breathing</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                    name="example" class="q5-neg-70"><label id="low-risk">Sore throat</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                    name="example" class="q5-neg-70"><label id="risk">Muscle aches or body aches</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                    name="example" class="q5-neg-70"><label id="risk">Vomoting or diarrhea</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem;"> <input type="checkbox"
+                                                    name="example" class="q5-neg-70"><label id="risk">New loss of taste or smell</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                    name="example" class="q5-neg-0"><label id="high-risk">None</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field" id="button-alignment" style="display: flexbox; margin-top: 8rem;">
+                                    
+                                    <div class="ui right floated button q5-next" id="button-size">Next</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-5-1" id="central-container" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field">
+                                    <h3>Do they have any of the following (please select all that apply)?</h3>
+                                    <div class="ui form">
+                                        <div class="ui form">
+                                            <div class="ui checkbox">
+                                                <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                        name="example" class="q5-neg-70"><label id="low-risk">Cough</label>
+                                                </div>
+                                                <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                        name="example" class="q5-neg-70"><label id="low-risk">Mild pr moderate difficulty
+                                                        breathing</label>
+                                                </div>
+                                                <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                        name="example" class="q5-neg-70"><label id="low-risk">Sore throat</label>
+                                                </div>
+                                                <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                        name="example" class="q5-neg-70"><label id="risk">Muscle aches or body aches</label>
+                                                </div>
+                                                <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                        name="example" class="q5-neg-70"><label id="risk">Vomoting or diarrhea</label>
+                                                </div>
+                                                <div class="ui checkbox" style="margin: 1rem;"> <input type="checkbox"
+                                                        name="example" class="q5-neg-70"><label id="risk">New loss of taste or smell</label>
+                                                </div>
+                                                <div class="ui checkbox" style="margin: 1rem;"><input type="checkbox"
+                                                        name="example" class="q5-neg-0"><label id="high-risk">None</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field" id="button-alignment" style="display: flexbox; margin-top: 8rem;">
+                                   
+                                    <div class="ui right floated button q5-next-1" id="button-size">Next</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-6" id="central-container" style="padding: 22px;" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment" style="margin: 0.1rem; width: 500rem; height: 70%;">
+                        <div class="ui  form">
+                            <div class="two fields" style="padding-top: 4vw;">
+                                <div class="field" style="margin-top: auto;">
+                                    <h3 style="font-size: 27px;">Do you live in a long-term care facility or nursing
+                                        home?</h3>
+                                </div>
+                                <div class="field" id="button-alignment">
+                                    <div class="ui left floated button q6-yes" id="button-size" style="width: 6em;">Yes</div>
+                                    <div class="ui right floated button q6-no" id="button-size" style="width: 6em">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-6-1" id="central-container" style="padding: 22px;" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment" style="margin: 0.1rem; width: 500rem; height: 70%;">
+                        <div class="ui  form">
+                            <div class="two fields" style="padding-top: 4vw;">
+                                <div class="field" style="margin-top: auto;">
+                                    <h3 style="font-size: 27px;">Do they live in a long-term care facility or nursing
+                                        home?</h3>
+                                </div>
+                                <div class="field" id="button-alignment">
+                                    <div class="ui left floated button q6-yes-1" id="button-size" style="width: 6em;">Yes</div>
+                                    <div class="ui right floated button q6-no-1" id="button-size" style="width: 6em">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-7" id="central-container" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment" style="margin: 0.1rem; width: 500rem; height: 75%;">
+                        <div class="ui  form">
+                            <div class="two fields" style="padding-top: 1vw;">
+                                <div class="field" style="margin-top: auto;">
+                                    <h3>In the last two weeks, have you worked or volunteered in a healthcare facility
+                                        or as a
+                                        first responder (Facilities include a hospital, other medical setting (including
+                                        dental care setting),
+                                        or long-term care facility)?</h3>
+                                </div>
+                                <div class="field" id="button-alignment" style="margin-top: 8vw;">
+                                    <div class="ui left floated button q7-yes" id="button-size" style="width: 6rem;">Yes</div>
+                                    <div class="ui right floated button q7-no" id="button-size" style="width: 6rem">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-7-1" id="central-container" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment" style="margin: 0.1rem; width: 500rem; height: 75%;">
+                        <div class="ui  form">
+                            <div class="two fields" style="padding-top: 1vw;">
+                                <div class="field" style="margin-top: auto;">
+                                    <h3>In the last two weeks, have they worked or volunteered in a healthcare facility
+                                        or as a
+                                        first responder (Facilities include a hospital, other medical setting (including
+                                        dental care setting),
+                                        or long-term care facility)?</h3>
+                                </div>
+                                <div class="field" id="button-alignment" style="margin-top: 8vw;">
+                                    <div class="ui left floated button q7-yes-1" id="button-size" style="width: 6rem;">Yes</div>
+                                    <div class="ui right floated button q7-no-1" id="button-size" style="width: 6rem">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-8" id="central-container" style="width: 75vw; height: 75%;" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment" style="max-height: 87vh;">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field">
+                                    <h3 style="font-size: 26px;">Does any of these apply to you (check all that apply)?
+                                    </h3>
+                                    <div class="ui form">
+                                        <div class="ui checkbox">
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="low-risk">Chronic lung disease, moderate
+                                                    to severe asthma,
+                                                    COPD (chronic obstructive pulmonary disease), cystic fibrosis, or
+                                                    pulmonary fibrosis</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="low-risk">Serious heart conditions, such
+                                                    as heart failure,
+                                                    coronary artery disease, or cardiomyopathy</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="low-risk">Obesity</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="risk">Diabetes, chronic kidney disease, or
+                                                    liver disease</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="risk">Blood disorder, such as sickle cess
+                                                    disease or thalassemia</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"> <input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="risk">Cerebrovasculare disease or
+                                                    neurologic condition, such as stroke
+                                                    or dementia</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="high-risk">Smoking</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="high-risk">Pregnancy</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-0"><label id="high-risk">None of the above</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field" id="button-alignment" style="display: flexbox; margin-top: 10vw;">
+                                   
+                                    <div class="ui right floated button q8-next" id="button-size">Next</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-8-1" id="central-container" style="width: 75vw; height: 75%;" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment" style="max-height: 87vh;">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field">
+                                    <h3 style="font-size: 26px;">Does any of these apply to them (check all that apply)?
+                                    </h3>
+                                    <div class="ui form">
+                                        <div class="ui checkbox">
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="low-risk">Chronic lung disease, moderate
+                                                    to severe asthma,
+                                                    COPD (chronic obstructive pulmonary disease), cystic fibrosis, or
+                                                    pulmonary fibrosis</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="low-risk">Serious heart conditions, such
+                                                    as heart failure,
+                                                    coronary artery disease, or cardiomyopathy</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="low-risk">Obesity</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="risk">Diabetes, chronic kidney disease, or
+                                                    liver disease</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="risk">Blood disorder, such as sickle cess
+                                                    disease or thalassemia</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"> <input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="risk">Cerebrovasculare disease or
+                                                    neurologic condition, such as stroke
+                                                    or dementia</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="high-risk">Smoking</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="high-risk">Pregnancy</label>
+                                            </div>
+                                            <div class="ui checkbox" style="margin: 0.2em;"><input type="checkbox"
+                                                    name="example" class="q8-neg-80"><label id="high-risk">None of the above</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field" id="button-alignment" style="display: flexbox; margin-top: 10vw;">
+                                   
+                                    <div class="ui right floated button q8-next-1" id="button-size">Next</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-9" id="central-container" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field" style="margin-top: auto;">
+                                    <h3 style="font-size: 20px;">In the last two weeks, did you care for or have close
+                                        contact with someone diagnosed with COVID-19?</h3>
+                                </div>
+                                <div class="field" id="button-alignment">
+                                    <div class="ui left floated button q9-yes" id="button-size">Yes</div>
+                                    <div class="ui button right floated q9-no" id="button-size">No</div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container question-9-1" id="central-container" hidden>
+                <div class="row middle-row">
+                    <div class="ui segment" id="segment">
+                        <div class="ui  form">
+                            <div class="two fields">
+                                <div class="field" style="margin-top: auto;">
+                                    <h3 style="font-size: 20px;">In the last two weeks, did they care for or have close
+                                        contact with someone diagnosed with COVID-19?</h3>
+                                </div>
+                                <div class="field" id="button-alignment">
+                                    <div class="ui left floated button q9-yes-1" id="button-size">Yes</div>
+                                    <div class="ui button right floated q9-no-1" id="button-size">No</div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container report-1" id="central-container" hidden>
+                <div class="row ">
+                    <div class="ui  form">
+                        <h1 style="font-size: 35px;">We cannot conclude that the subject has been exposed based on the supplied
+                            answers. Stay home, monitor your symptoms and call your doctor if you feel you are getting worse.
+                        </h1>
+                        <p>Watch out for <a
+                                href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html">COVID‑19
+                                symptoms</a> . If you develop
+                            any of the mentioned symptoms, please contact your care provider immediately for advice.</p>
+                        <p><b>Some steps you could take that may help you and your loved ones:</b></p>
+                        <li>Stay home</li>
+                        <li>Use face masks and observe good personal hygiene</li>
+                        <li>Drink enough water and stay hydrated</li>
+                        <li>Cover your coughs and sneezes</li>
+                        <li>Wash your hands thoroghly</li>
+                        <li>Observe ALL CDC protocol if you think you are exposed</li>
+                        </p>
+
+                        <div>
+                            <h1>You do not need COVID-19 test at this time</h1>
+                            <h3>
+                                Based on the answers you provided, we do not recommend you offer yourself for COVID-19
+                                test at this time
+                            </h3>
+                        </div>
+                        <div class="ui right floated button Home" id="button-size">Home</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container report-2" id="central-container" hidden>
+                <div class="row ">
+                    <div class="ui  form">
+                        <i class="ambulance icon large" style="color: red; margin: 15px;"></i>
+                        <h1 style="font-size: 35px; color: brown;">Urgent medical attention may be needed. Please call
+                            911 or go to the Emergency Department.
+                        </h1>
+                        <p style="font-size: 24px;">This is in line with assessment the risk profile provided by CDC on <a
+                                href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html">COVID‑19
+                                symptoms</a> </p>
+                        <p style="font-size: 20px;">Tell the 911 operator or emergency staff
+                            if you have had contact with someone with COVID‑19.
+                        </p>
+                        <div class="ui right floated button Home" id="button-size">Home</div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <div id="footer"> <a href="https://github.com/courtneypaasch/hidden-hippos" class="source"></a> </div>
+</body>
+<style>
+    body {
+        position: relative;
+    }
+
+    .main-page {
+        height: 100%;
+    }
+
+    #central-container {
+        border: none 0.1px gray;
+        width: 90vh;
+        margin: auto;
+        height: 60%;
+        align-items: center;
+    }
+
+    #task {
+        margin-top: 0px;
+    }
+
+    #header {
+        margin-bottom: 0px;
+    }
+
+    #assessment {
+        margin-bottom: 0px;
+    }
+
+    #task {
+        height: 15px;
+    }
+
+    #button-size {
+        width: 80px;
+        padding: 10px;
+        font-weight: bolder;
+        background-color: green;
+        color: whitesmoke;
+    }
+
+    #segment {
+        position: relative;
+        height: auto;
+        border: solid 2px grey;
+    }
+
+    #button-alignment {
+        margin-top: 0.5em;
+    }
+
+    .middle-row {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(./Bgrnd.png);
+        border: solid 5px white;
+    }
+</style>
+
+<script>
+
+//To go through question pages for self//
+    $('.intro-myself').click(function() {
+        event.preventDefault()
+        $('.question-0').hide(500)
+        $('.question-1').removeAttr('hidden')
+    })
+    $('.intro-someone').click(function() {
+        event.preventDefault()
+        $('.question-0').hide(500)
+        $('.question-1-1').removeAttr('hidden')
+    })
+
+    $('.q1-next').click(function() {
+        event.preventDefault()
+        $('.question-1').hide(500)
+        $('.question-2').removeAttr('hidden')
+        if ($('.q1-neg-80').is(':checked')) {
+            yourScore = yourScore + 40
+            localStorage.setItem('yourScore', yourScore)
+        }
+    })   
+
+    $('.q1-next-1').click(function() {
+        event.preventDefault()
+        $('.question-1-1').hide(500)
+        $('.question-2-1').removeAttr('hidden')
+        if ($('.q1-neg-80').is(':checked')) {
+            yourScore = yourScore + 40
+            localStorage.setItem('yourScore', yourScore)
+        }
+    }) 
+
+    $('.q2-next').click(function() {
+        event.preventDefault()
+        $('.question-2').hide(500)
+        $('.question-3').removeAttr('hidden')
+        if ($('.q2-neg-5').is(':checked')) {
+            yourScore = yourScore + 5
+            localStorage.setItem('yourScore', yourScore)
+        } 
+        if ($('.q2-neg-10').is(':checked')) {
+            yourScore = yourScore + 10
+            localStorage.setItem('yourScore', yourScore)
+        } 
+        if ($('.q2-neg-20').is(':checked')) {
+            yourScore = yourScore + 20
+            localStorage.setItem('yourScore', yourScore)
+        } 
+        
+    })
+      
+    $('.q2-next-1').click(function() {
+        event.preventDefault()
+        $('.question-2-1').hide(500)
+        $('.question-3-1').removeAttr('hidden')     
+        if ($('.q2-neg-5').is(':checked')) {
+            yourScore = yourScore + 5
+            localStorage.setItem('yourScore', yourScore)
+        } 
+        if ($('.q2-neg-10').is(':checked')) {
+            yourScore = yourScore + 10
+            localStorage.setItem('yourScore', yourScore)
+        } 
+        if ($('.q2-neg-20').is(':checked')) {
+            yourScore = yourScore + 20
+            localStorage.setItem('yourScore', yourScore)
+        } 
+    })
+
+    $('.q3-yes').click(function() {
+        event.preventDefault()
+        $('.question-3').hide(500)
+        $('.question-4').removeAttr('hidden')
+            yourScore = yourScore + 20
+            localStorage.setItem('yourScore', yourScore)        
+    })
+
+    $('.q3-no').click(function() {
+        event.preventDefault()
+        $('.question-3').hide(500)
+        $('.question-4').removeAttr('hidden')
+    })
+
+    $('.q3-yes-1').click(function() {
+        event.preventDefault()
+        $('.question-3-1').hide(500)
+        $('.question-4-1').removeAttr('hidden')
+        yourScore = yourScore + 20
+            localStorage.setItem('yourScore', yourScore)  
+    })
+
+    $('.q3-no-1').click(function() {
+        event.preventDefault()
+        $('.question-3-1').hide(500)
+        $('.question-4-1').removeAttr('hidden')
+    })
+
+    $('.q4-yes').click(function() {
+        event.preventDefault()
+        $('.question-4').hide(500)
+        $('.question-5').removeAttr('hidden')
+        yourScore = yourScore + 40
+            localStorage.setItem('yourScore', yourScore)  
+    })
+
+    $('.q4-no').click(function() {
+        event.preventDefault()
+        $('.question-4').hide(500)
+        $('.question-5').removeAttr('hidden')
+    })
+
+    $('.q4-yes-1').click(function() {
+        event.preventDefault()
+        $('.question-4-1').hide(500)
+        $('.question-5-1').removeAttr('hidden')
+        yourScore = yourScore + 40
+        localStorage.setItem('yourScore', yourScore)  
+    })
+
+    $('.q4-no-1').click(function() {
+        event.preventDefault()
+        $('.question-4-1').hide(500)
+        $('.question-5-1').removeAttr('hidden')
+    })
+    
+    $('.q5-next').click(function() {
+        event.preventDefault()
+        $('.question-5').hide(500)
+        $('.question-6').removeAttr('hidden')
+        if ($('.q5-neg-70').is(':checked')) {
+            yourScore = yourScore + 40
+            localStorage.setItem('yourScore', yourScore)
+        }
+    })
+
+    $('.q5-next-1').click(function() {
+        event.preventDefault()
+        $('.question-5-1').hide(500)
+        $('.question-6-1').removeAttr('hidden')
+        if ($('.q5-neg-70').is(':checked')) {
+            yourScore = yourScore + 40
+            localStorage.setItem('yourScore', yourScore)
+        }
+    })
+
+    $('.q6-yes').click(function() {
+        event.preventDefault()
+        $('.question-6').hide(500)
+        $('.question-7').removeAttr('hidden')
+        yourScore = yourScore + 30
+        localStorage.setItem('yourScore', yourScore)
+    })
+
+    $('.q6-no').click(function() {
+        event.preventDefault()
+        $('.question-6').hide(500)
+        $('.question-7').removeAttr('hidden')
+    })
+    $('.q6-yes-1').click(function() {
+        event.preventDefault()
+        $('.question-6-1').hide(500)
+        $('.question-7-1').removeAttr('hidden')
+        yourScore = yourScore + 30
+        localStorage.setItem('yourScore', yourScore)
+    })
+
+    $('.q6-no-1').click(function() {
+        event.preventDefault()
+        $('.question-6-1').hide(500)
+        $('.question-7-1').removeAttr('hidden')
+    })
+
+    $('.q7-yes').click(function() {
+        event.preventDefault()
+        $('.question-7').hide(500)
+        $('.question-8').removeAttr('hidden')
+        yourScore = yourScore + 20
+        localStorage.setItem('yourScore', yourScore)
+    })
+
+    $('.q7-no').click(function() {
+        event.preventDefault()
+        $('.question-7').hide(500)
+        $('.question-8').removeAttr('hidden')
+    })
+    $('.q7-yes-1').click(function() {
+        event.preventDefault()
+        $('.question-7-1').hide(500)
+        $('.question-8-1').removeAttr('hidden')
+        yourScore = yourScore + 20
+        localStorage.setItem('yourScore', yourScore)
+    })
+
+    $('.q7-no-1').click(function() {
+        event.preventDefault()
+        $('.question-7-1').hide(500)
+        $('.question-8-1').removeAttr('hidden')
+    })
+
+    $('.q8-next').click(function() {
+        event.preventDefault()
+        $('.question-8').hide(500)
+        $('.question-9').removeAttr('hidden')
+        if ($('.q8-neg-80').is(':checked')) {
+            yourScore = yourScore + 40
+            localStorage.setItem('yourScore', yourScore)
+        }
+    })
+    $('.q8-next-1').click(function() {
+        event.preventDefault()
+        $('.question-8-1').hide(500)
+        $('.question-9-1').removeAttr('hidden')
+        if ($('.q8-neg-80').is(':checked')) {
+            yourScore = yourScore + 40
+            localStorage.setItem('yourScore', yourScore)
+        }
+    })
+
+    $('.q9-yes').click(function() {
+        event.preventDefault()
+        $('.question-9').hide(500)
+        if(localStorage.getItem('yourScore')>100){
+            $('.report-2').removeAttr('hidden')
+        }        
+        if(localStorage.getItem('yourScore')<=100){
+            $('.report-1').removeAttr('hidden')
+        }  
+    })
+
+    $('.q9-no').click(function() {
+        event.preventDefault()
+        $('.question-9').hide(500)
+        if(localStorage.getItem('yourScore')>100){
+            $('.report-2').removeAttr('hidden')
+        }        
+        if(localStorage.getItem('yourScore')<=100){
+            $('.report-1').removeAttr('hidden')
+        }  
+    })
+  
+    $('.q9-yes-1').click(function() {
+        event.preventDefault()
+        $('.question-9-1').hide(500)
+        yourScore = yourScore + 20
+        localStorage.setItem('yourScore', yourScore)
+        if(localStorage.getItem('yourScore')>100){
+            $('.report-2').removeAttr('hidden')
+        }        
+        if(localStorage.getItem('yourScore')<=100){
+            $('.report-1').removeAttr('hidden')
+        }  
+        
+    })
+
+    $('.q9-no-1').click(function() {
+        event.preventDefault()
+        $('.question-9-1').hide(500)
+        if(localStorage.getItem('yourScore')>100){
+            $('.report-2').removeAttr('hidden')
+        }        
+        if(localStorage.getItem('yourScore')<=100){
+            $('.report-1').removeAttr('hidden')
+        }  
+    $('.Home').click(function(){
+        location.assign('./index.html')
+    })
+    })
+    
+    var yourScore = 0;
+   
+</script>
+
+</html>

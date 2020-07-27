@@ -6,19 +6,20 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covid-19 Tracker</title>
+    <title>Covid-19 Question Pages</title>
 </head>
 
-<body>
+<body class="main-page">
     <header>
-        <div class="custom-menu-wrapper">
+        <div id="header" class="custom-menu-wrapper">
             <div class="pure-menu custom-menu custom-menu-top">
                 <a href="#" class="pure-menu-heading custom-menu-brand">Real Time Covid-19 Tracker</a>
                 <a href="#" class="custom-menu-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
             </div>
-            <div class="pure-menu pure-menu-horizontal pure-menu-scrollable custom-menu custom-menu-bottom custom-menu-tucked"
+            <div class="pure-menu pure-menu-horizontal custom-menu pure-menu-scrollable custom-menu-bottom custom-menu-tucked"
                 id="tuckedMenu">
                 <div class="custom-menu-screen"></div>
                 <ul class="pure-menu-list">
@@ -37,330 +38,87 @@
                 </ul>
             </div>
     </header>
-    <main>
+    <main class="main-page">
         <div class="ui container" id="central-container">
-            <h2>Are you worried you could be having symtoms of the covid-19 virus? Please click the proceed button
-                for self-test.
-                <p> At the end of the assessment, we will advise you on what to do next</p>
-            </h2>
-            <div class="ui container center aligned">
-                <button class="massive ui button center aligned " id="start-button">
-                    Start Self Assessement
-                </button>
+            <div class="row upper-row">
+
             </div>
-        </div>
+            <div class="row lower-row">
+                <h1 class="lower-row-text" id="row-text-title">COVID-19 Self-Assessment</h1>
+                <p class="lower-row-text">Taking this self-assessment helps you or your loved ones
+                    assess their exposure to COVID-19 in order to make informed medical decisions</p>
+                <p class="lower-row-text"><i class="envelope open outline icon"></i>This is purely
+                    informational, does not take the place of your doctor</p>
 
-        <!--Questions DIV-->
-        <div id="assessement-1">
-            <h3>Are you currently experiencing any of these issues? Call 911 if you are.</h3>
-            <h3>
-                <li>Severe difficulty breathing. (struggling for each breath, can only speak in single words</li>
-                <li>Severe chest pain. (constant tightness or crushing sensation)</li>
-                <li>Feeling confused or unsure of where you are</li>
-                <li>Losing consciousness</li>
-            </h3>
-        </div>
-
-        <div class="ui form" id="radio-buttons">
-            <div class="inline fields">
-                <div class="field" id="red-button">
-                    <!--<div class="ui radio checkbox">
-                        <input type="radio" name="frequency" id="radio">
-                        <label></label>
-                    </div>-->
-                    <button class="ui inverted red button massive" id="radio">YES</button>        
+                <div class="field" id="button-alignment" style="margin-top: 6.5vw; ">
+                    <div class="ui left floated button home-home" id="button-size">Home</div>
+                    <div class="ui right floated button home-start" id="button-size">Start</div>
                 </div>
 
-                <div class="field">
-                    <!--<div class="ui radio checkbox">
-                        <input type="radio" name="frequency" id="radio">
-                        <label></label>
-                    </div>-->
-                    <button class="ui inverted green button massive">NO</button>
-                </div>
+
             </div>
+
         </div>
 
-        <div id="assessement-2">
-            <h3>How old are you?</h3>
-            <h3>We collect this anonymous information to better understand how the virus affects different age groups.</h3>
-        
-        
-            <h3>
-                <div class="ui form" >
-                    <div class="grouped fields" >
-                        <div class="field">
-                            <div class="ui radio checkbox" id="radio-group">
-                                <input type="radio" name="example2" checked="checked">
-                                <label>9 years old or younger</label>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="ui radio checkbox" id="radio-group">
-                                <input type="radio" name="example2">
-                                <label>10 to 19 years old</label>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="ui radio checkbox" id="radio-group">
-                                <input type="radio" name="example2">
-                                <label>20 to 29 years old</label>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="ui radio checkbox" id="radio-group">
-                                <input type="radio" name="example2">
-                                <label>30 to 39 years old</label>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="ui radio checkbox" id="radio-group">
-                                <input type="radio" name="example2">
-                                <label>40 to 49 years old</label>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="ui radio checkbox" id="radio-group">
-                                <input type="radio" name="example2">
-                                <label>50 to 59 years old</label>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="ui radio checkbox" id="radio-group">
-                                <input type="radio" name="example2">
-                                <label>60 to 69 years old</label>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="ui radio checkbox" id="radio-group">
-                                <input type="radio" name="example2">
-                                <label>70 to 79 years old</label>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="ui radio checkbox" id="radio-group">
-                                <input type="radio" name="example2">
-                                <label>80 years old or older</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </h3>
-        </div>
-
-            <div id="assessement-3">
-                <h3>Are you currently experiencing any of these symptoms? Choose any/all that apply.</h3>
-                <h3>We collect this anonymous information to better understand how the virus affects different age groups.</h3>
-                <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Fever(feeling hot to the touch, a temperature of 37.8 degrees Celsius or higher)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Chills</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Cough that's new or worsening(continuous, more than usual)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Barking cough, making a whistling noise when breathing(croup)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Barking cough, making a whistling noise when breathing(croup)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Shortness of breath(out of breath, unable to breathe deeply)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Sore throat(not related to seasonal allergies or other known causes or conditions)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Difficulty swallowing</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Runny nose(not related to seasonal allergies or other known causes or conditions)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Stuffy or congested nose(not related to seasonal allergies or other known causes or conditions)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Lost sense of taste or smell</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Pink eye(conjunctivitis)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Headache that’s unusual or long lasting</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Digestive issues like nausea/vomiting, diarrhea, stomach pain (not related to other known causes or conditions)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Muscle aches that are unusual or long lasting</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Extreme tiredness that is unusual(fatigue, lack of energy)</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>Falling down often</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>or young children and infants: sluggishness or lack of appetiten</label>
-                  </div></h3>
-                  <h3><div class="ui checked checkbox">
-                    <input type="checkbox">
-                    <label>None of the above</label>
-                  </div></h3>
-                  <h3><button class="ui button">Next</button></h3>
-            </div>
-            <div id="assessement-4"></div>
-            <h3>Are you in any of these at-risk groups?
-                <li>Getting treatment that compromises (weakens) your immune system
-                    (for example, chemotherapy, medication for transplants, corticosteroids, TNF inhibitors)</li>
-                <li>Having a condition that compromises (weakens) your immune system
-                        (for example, lupus, rheumatoid arthritis, immunodeficiency disorder)</li>
-                <li>Having a chronic (long-lasting) health condition
-                    (for example, diabetes, emphysema, asthma, heart condition, COPD)</li>
-                <li>Regularly going to a hospital or health care setting for a treatment
-                    (for example, dialysis, surgery, cancer treatment)</li>
-                    <button class="ui button">
-                        YES
-                      </button>
-                      <div class="ui button" tabindex="0">
-                        NO
-                      </div>
-            </h3>
-            </div>
-
-            <div id="assessement-5"></div>
-            <h3>In the last 14 days, have you been in close physical contact with someone who tested positive for COVID-19?
-                <p>Close physical contact means:</p>
-                <li>being less than 2 metres away in the same room, workspace, or area</li>
-                <li>living in the same home</li>
-               <button class="ui button">
-                        YES
-                      </button>
-                      <div class="ui button" tabindex="0">
-                        NO
-                      </div>
-            </h3>
-            </div>
-
-            <div id="assessement-6">
-                <h3>When did you last have close physical contact with them?</h3>                   
-            
-                <h3>
-                    <div class="ui form" >
-                        <div class="grouped fields" >
-                            <div class="field">
-                                <div class="ui radio checkbox" id="radio-group">
-                                    <input type="radio" name="example2">
-                                    <label>Today</label>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui radio checkbox" id="radio-group">
-                                    <input type="radio" name="example2">
-                                    <label>In the past week(2 - 6 days ago)
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui radio checkbox" id="radio-group">
-                                    <input type="radio" name="example2">
-                                    <label>More than a week ago(7 - 11 days ago)</label>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui radio checkbox" id="radio-group">
-                                    <input type="radio" name="example2">
-                                    <label>About 2 weeks ago(12 - 14 days ago)</label>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui radio checkbox" id="radio-group">
-                                    <input type="radio" name="example2">
-                                    <label>I don't remember</label>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                            <h3><button class="ui button">Next</button></h3>
-                            </h3>
-                            </div>
-                            
-
-
-            
-
-
-            
-
-          
-
-
-        <style>
-            #start-button {
-                color: white;
-                background-color: rgb(26, 121, 17);
-                margin-top: 100px;
-                height: 110px;
-                border-radius: 40px;
-                border: solid 3px blue;
-            }
-            h3{
-               text-align: left !important;
-               margin-left: 10%;
-            }
-            body {
-                width: 100%;
-            }
-            #radio-buttons {
-                margin-left: 30%;
-                margin-top: 3%;
-            }
-
-            #red-button {
-                margin-right: 30%;
-            }
-            .ui.radio.checkbox {
-                margin-right: 0px !important;
-                width: 10px;
-            }
-            #radio-group {
-                width: 100%;
-            }
-
-        </style>
 
 
 
     </main>
-    <div id="footer"> <a href="https://github.com/courtneypaasch/hidden-hippos" class="source">View Source Code on
-            GitHub</a> </div>
+    <div id="footer"> <a href="https://github.com/courtneypaasch/hidden-hippos" class="source"></a> </div>
 </body>
+<style class="main-page">
+    body {
+        position: relative;
+    }
+
+    .main-page {
+        height: 100%;
+    }
+
+    #central-container {
+        border: dotted 2px blue;
+        height: 80%;
+        width: 90vh;
+    }
+
+    .upper-row {
+        border: dotted brown 2px;
+        height: 45%;
+        background-image: url(./bgnd.gif);
+        image-rendering: crisp-edges;
+    }
+
+    .lower-row {
+        border: dotted brown 2px;
+        height: 55%;
+        padding-top: 2%;
+
+    }
+
+    #button-size {
+        width: 80px;
+        padding: 10px;
+        font-weight: bolder;
+        background-color: green;
+        color: whitesmoke;
+    }
+
+    @media only screen and (max-width: 560px) {
+        #button-right {
+            margin-left: 5em;
+        }
+    }
+</style>
 
 <script>
-    
-  
-    
 
+    $('.home-start').click(function () {
+        event.preventDefault()
+        location.assign('symptoms01.html')
+    })
+    $('.home-home').click(function () {
+        location.assign('index.html')
+    })
 </script>
 
 </html>
