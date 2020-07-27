@@ -4,7 +4,7 @@
 $('document').ready(function () {
     // $('#search').on('click', function (event) {
     //     event.preventDefault();
-
+    var covidDATA = [];
 
 
     function topFIve() {
@@ -48,7 +48,7 @@ $('document').ready(function () {
                 //console.log(covidDATA);
             }
 
-            console.log(covidDATA[1].total);
+            console.log(covidDATA[1]["positive"]);
 
             // writing a sort logic compare function to pick the topmost(highest) 5 states with most cases --SORT ON TOTAL NUMBER OF CASES
             function compare(a, b) {
@@ -146,6 +146,7 @@ $('document').ready(function () {
 
     topFIve();
 
+   console.log(covidDATA[6]);
    //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
     var statePicList = {
         "CA":"./images/CA.png",
@@ -156,9 +157,22 @@ $('document').ready(function () {
     };
     console.log(statePicList.CA);
 
+  //code when we hit the see more button
+  //see more button not working properly for second stage onwards
+  //Here we he to pass in the state field and then display more stats
    document.getElementById("uibutton").addEventListener("click",function(){
     $(".searched-state").show();
     $(".worst-five-states").hide();
+   });
+
+   //code when we select a state from the dropdown
+   //id - multi-state
+   //todo- fill logic to either reuse the data stats from covidDATA or call the api again
+   $("#multi-state").change(function(){
+        var selectedState = $(this).find(':selected').val();
+        console.log(selectedState);
+        $(".searched-state").show();
+        $(".worst-five-states").hide();
    });
 
 });
