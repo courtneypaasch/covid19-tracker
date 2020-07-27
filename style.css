@@ -131,13 +131,16 @@ main {
     padding-bottom : 40px ;
 }
 
+.worst-five-states {
+  margin-bottom: 3%;
+}
+
 .hide {
     display: none;
 }
 .field {
    padding-left: 33%;
    padding-right: 33%;
-
 }
 
 h2 {
@@ -189,6 +192,14 @@ hr {
     position : fixed;
     bottom : 0px ;
     color: white;
+}
+
+.num {
+  text-align: center;
+}
+
+.date {
+  display: none;
 }
 
 /*media query for navbar*/
@@ -261,6 +272,8 @@ hr {
        height: 1150px;
    }
 }
+
+
 
 
 /*Hailey's CSS*/

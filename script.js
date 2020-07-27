@@ -74,68 +74,77 @@ $('document').ready(function () {
             // creating a for loop to pick the top 5 states with the maximum count and displaying it in the front page
 
 
-        //     //for (var i = 0; i < 5; i++) {
+            //     //for (var i = 0; i < 5; i++) {
 
-        //         //we will be plugging in the counts data into index.html here
-        //         //var totalCase = response.positive;
-        //         var totalCase = covidDATA[i].positive;
-        //         console.log(totalCase);
-        //         var hOne = $('<h6>').text(totalCase);
+            //         //we will be plugging in the counts data into index.html here
+            //         //var totalCase = response.positive;
+            //         var totalCase = covidDATA[i].positive;
+            //         console.log(totalCase);
+            //         var hOne = $('<h6>').text(totalCase);
 
-        //         $('.totalCasesIndex0').append(hOne);
+            //         $('.totalCasesIndex0').append(hOne);
 
-        //         //var newCase = response.positiveIncrease;
-        //         var newCase = covidDATA[i].newcases;
-        //         var hTwo = $('<h6>').text(newCase);
-        //         $('.newCaseIndex0').append(hTwo);
+            //         //var newCase = response.positiveIncrease;
+            //         var newCase = covidDATA[i].newcases;
+            //         var hTwo = $('<h6>').text(newCase);
+            //         $('.newCaseIndex0').append(hTwo);
 
-        //         // var totalDeath = response.death;
-        //         var totalDeath = covidDATA[i].death;
-        //         var hThree = $('<h6>').text(totalDeath);
-        //         $('.totalDeathIndex0').append(hThree);
-        //    // }
+            //         // var totalDeath = response.death;
+            //         var totalDeath = covidDATA[i].death;
+            //         var hThree = $('<h6>').text(totalDeath);
+            //         $('.totalDeathIndex0').append(hThree);
+            //    // }
 
-        //top state 1
-       // $('.headerIndex0').append(sortedCovidDATA[0].state);
+            //top state 1
+            // $('.headerIndex0').append(sortedCovidDATA[0].state);
 
-        $('.imgIndex0').attr("src",statePicList[sortedCovidDATA[0].state]);
-        $('.headerIndex0').append( $('<h2>').text(sortedCovidDATA[0].state));
-       // $('.totalCasesIndex0').append(sortedCovidDATA[0].positive);
-        $('.totalCasesIndex0').append( $('<h4>').text(sortedCovidDATA[0].positive));
-       // $('.newCaseIndex0').append(sortedCovidDATA[0].newcases);
-        $('.newCaseIndex0').append( $('<h4>').text(sortedCovidDATA[0].newcases));
-        $('.totalDeathIndex0').append( $('<h4>').text(sortedCovidDATA[0].death));
+            $('.imgIndex0').attr("src", statePicList[sortedCovidDATA[0].state]);
+            $('.headerIndex0').append($('<h2>').text(sortedCovidDATA[0].state));
+            // $('.totalCasesIndex0').append(sortedCovidDATA[0].positive);
+            $('.totalCasesIndex0').append($('<h4>').text(sortedCovidDATA[0].positive));
+            // $('.newCaseIndex0').append(sortedCovidDATA[0].newcases);
+            $('.newCaseIndex0').append($('<h4>').text(sortedCovidDATA[0].newcases));
+            $('.totalDeathIndex0').append($('<h4>').text(sortedCovidDATA[0].death));
+            $('.buttonindex0').attr("state", (sortedCovidDATA[0].state));
 
-        //top state 2
-        $('.imgIndex1').attr("src",statePicList[sortedCovidDATA[1].state]);
-        $('.headerIndex1').append( $('<h2>').text(sortedCovidDATA[1].state));
-         $('.totalCasesIndex1').append( $('<h4>').text(sortedCovidDATA[1].positive));
-         $('.newCaseIndex1').append( $('<h4>').text(sortedCovidDATA[1].newcases));
-         $('.totalDeathIndex1').append( $('<h4>').text(sortedCovidDATA[1].death));
+            //top state 2
+            $('.imgIndex1').attr("src", statePicList[sortedCovidDATA[1].state]);
+            $('.headerIndex1').append($('<h2>').text(sortedCovidDATA[1].state));
+            $('.totalCasesIndex1').append($('<h4>').text(sortedCovidDATA[1].positive));
+            $('.newCaseIndex1').append($('<h4>').text(sortedCovidDATA[1].newcases));
+            $('.totalDeathIndex1').append($('<h4>').text(sortedCovidDATA[1].death));
+            $('.buttonindex1').attr("state", (sortedCovidDATA[1].state));
 
-         //top state 3
-         $('.imgIndex2').attr("src",statePicList[sortedCovidDATA[2].state]);
-         $('.headerIndex2').append( $('<h2>').text(sortedCovidDATA[2].state));
-          $('.totalCasesIndex2').append( $('<h4>').text(sortedCovidDATA[2].positive));
-          $('.newCaseIndex2').append( $('<h4>').text(sortedCovidDATA[2].newcases));
-          $('.totalDeathIndex2').append( $('<h4>').text(sortedCovidDATA[2].death));
 
-          //top state 4
-          $('.imgIndex3').attr("src",statePicList[sortedCovidDATA[3].state]);
-          $('.headerIndex3').append( $('<h2>').text(sortedCovidDATA[3].state));
-           $('.totalCasesIndex3').append( $('<h4>').text(sortedCovidDATA[3].positive));
-           $('.newCaseIndex3').append( $('<h4>').text(sortedCovidDATA[3].newcases));
-           $('.totalDeathIndex3').append( $('<h4>').text(sortedCovidDATA[3].death));
+            //top state 3
+            $('.imgIndex2').attr("src", statePicList[sortedCovidDATA[2].state]);
+            $('.headerIndex2').append($('<h2>').text(sortedCovidDATA[2].state));
+            $('.totalCasesIndex2').append($('<h4>').text(sortedCovidDATA[2].positive));
+            $('.newCaseIndex2').append($('<h4>').text(sortedCovidDATA[2].newcases));
+            $('.totalDeathIndex2').append($('<h4>').text(sortedCovidDATA[2].death));
+            $('.buttonindex2').attr("state", (sortedCovidDATA[2].state));
 
-           //top state 5
-           $('.imgIndex4').attr("src",statePicList[sortedCovidDATA[4].state]);
-           $('.headerIndex4').append( $('<h2>').text(sortedCovidDATA[4].state));
-            $('.totalCasesIndex4').append( $('<h4>').text(sortedCovidDATA[4].positive));
-            $('.newCaseIndex4').append( $('<h4>').text(sortedCovidDATA[4].newcases));
-            $('.totalDeathIndex4').append( $('<h4>').text(sortedCovidDATA[4].death));
+
+            //top state 4
+            $('.imgIndex3').attr("src", statePicList[sortedCovidDATA[3].state]);
+            $('.headerIndex3').append($('<h2>').text(sortedCovidDATA[3].state));
+            $('.totalCasesIndex3').append($('<h4>').text(sortedCovidDATA[3].positive));
+            $('.newCaseIndex3').append($('<h4>').text(sortedCovidDATA[3].newcases));
+            $('.totalDeathIndex3').append($('<h4>').text(sortedCovidDATA[3].death));
+            $('.buttonindex3').attr("state", (sortedCovidDATA[3].state));
+
+
+            //top state 5
+            $('.imgIndex4').attr("src", statePicList[sortedCovidDATA[4].state]);
+            $('.headerIndex4').append($('<h2>').text(sortedCovidDATA[4].state));
+            $('.totalCasesIndex4').append($('<h4>').text(sortedCovidDATA[4].positive));
+            $('.newCaseIndex4').append($('<h4>').text(sortedCovidDATA[4].newcases));
+            $('.totalDeathIndex4').append($('<h4>').text(sortedCovidDATA[4].death));
+            $('.buttonindex4').attr("state", (sortedCovidDATA[4].state));
+
 
             //displaying the date for the data shown
-            $('.date').append( $('<h4>').text(sortedCovidDATA[0].date));
+            $('.date').append($('<h4>').text(sortedCovidDATA[0].date));
         })
     }
 
@@ -146,20 +155,38 @@ $('document').ready(function () {
 
     topFIve();
 
-   //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
+    //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
     var statePicList = {
-        "CA":"./images/CA.png",
-        "FL":"./images/FL.png",
-        "NY":"./images/NY.png",
-        "NJ":"./images/NJ.png",
-        "TX":"./images/TX.png"
+        "CA": "./images/CA.png",
+        "FL": "./images/FL.png",
+        "NY": "./images/NY.png",
+        "NJ": "./images/NJ.png",
+        "TX": "./images/TX.png"
     };
     console.log(statePicList.CA);
 
-   document.getElementById("uibutton").addEventListener("click",function(){
-    $(".searched-state").show();
-    $(".worst-five-states").hide();
-   });
+    // document.getElementById("seemore").addEventListener("click",function(){
+    //  $(".searched-state").show();
+    //  $(".worst-five-states").hide();
+    // });
+
+
+    $("#worst-five-states").on("click", function (event) {
+        var elementclicked = event.target;
+        console.log(elementclicked);
+        var state =$(elementclicked).attr("state");
+        console.log(state);
+
+        if (elementclicked.matches("button")) {
+            $(".searched-state").show();
+            $(".worst-five-states").hide();
+            $('.state-searched').text(state);
+
+
+        }
+
+
+    });
 
 });
 
