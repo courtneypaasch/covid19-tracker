@@ -131,6 +131,10 @@ main {
     padding-bottom : 40px ;
 }
 
+.ui.grid .centered.row>.column:not(.aligned):not(.justified) {
+  text-align: center;
+}
+
 .worst-five-states {
   margin-bottom: 3%;
 }
@@ -250,14 +254,22 @@ hr {
         overflow: hidden;
     }
 
-    .t5out {
+    .content {
         display: flex;
         justify-content: center;
+
     }
 
    .extra {
        display: flex;
        justify-content: center;
+       align-items: center;
+       text-align: center;
+       align-content: center;
+   }
+
+   #uibutton {
+     width: 100%;
    }
 
     .connect {
