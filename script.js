@@ -158,8 +158,8 @@ $('document').ready(function () {
 
     //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
 
-   console.log(covidDATA[6]);
-   //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
+    console.log(covidDATA[6]);
+    //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
 
     var statePicList = {
         "CA": "./images/CA.png",
@@ -176,42 +176,91 @@ $('document').ready(function () {
     //  $(".worst-five-states").hide();
     // });
 
+    function selectedStateData(input){
+        for(var i = 0; i < sortedCovidDATA.length; i++){
+            if(sortedCovidDATA[i].state === input){
+                console.log('reachedhere');
+                $('.searchedStats1').append($('<h4>').text(sortedCovidDATA[i].positive));
+                $('.searchedStats2').append($('<h4>').text(sortedCovidDATA[i].newcases));
+                $('.searchedStats3').append($('<h4>').text(sortedCovidDATA[i].death));
+                $('.searchedStats4').append($('<h4>').text(sortedCovidDATA[i].newdeaths));
+                $('.searchedStats5').append($('<h4>').text(sortedCovidDATA[i].hospital));
+                $('.searchedStats6').append($('<h4>').text(sortedCovidDATA[i].time));
+            }
+    }
+}
+
+function clearData(){
+    $( ".searchedStats1" ).empty();
+    $( ".searchedStats2" ).empty();
+    $( ".searchedStats3" ).empty();
+    $( ".searchedStats4" ).empty();
+    $( ".searchedStats5" ).empty();
+    $( ".searchedStats6" ).empty();
+}
 
     $("#worst-five-states").on("click", function (event) {
         var elementclicked = event.target;
         console.log(elementclicked);
-        var state =$(elementclicked).attr("state");
-        console.log(state);
+        var stateClicked =$(elementclicked).attr("state");
+        console.log(stateClicked);
+
+       
 
         if (elementclicked.matches("button")) {
             $(".searched-state").show();
             $(".worst-five-states").hide();
-            $('.state-searched').text(state);
+            $('.state-searched').text(stateClicked);
+            $('.imgIndex').attr("src", statePicList[stateClicked]);
 
-
+            selectedStateData(stateClicked);
+            
+            // var stateE = $('#cityData').val();
+           
         }
+    })
+            // $.ajax({
+            //     url: 'https://covidtracking.com/api/v1/states/' + state + '/current.json',
+            //     method: 'GET'
+            // }).then(function (response) {
 
 
+            //     console.log(response);
+
+            //     // $('.imgIndex0').attr("src", statePicList[response.state]);
+            //     // $('.headerIndex0').append($('<h2>').text(response.state));
+            //     // $('.totalCasesIndex0').append(sortedCovidDATA[0].positive);
+            //     $('#totalC').append($('<h4>').text(response.positive));
+            //     // $('.newCaseIndex0').append(sortedCovidDATA[0].newcases);
+            //     // $('.newCaseIndex0').append($('<h4>').text(response.newcases));
+            //     // $('.totalDeathIndex0').append($('<h4>').text(response.death));
+            //     // $('.buttonindex0').attr("state", (response.state));
+            // });
+
+
+        
+
+    //code when we hit the see more button
+    //see more button not working properly for second stage onwards
+    //Here we he to pass in the state field and then display more stats
+    // document.getElementById("uibutton").addEventListener("click",function(){
+    //  $(".searched-state").show();
+    //  $(".worst-five-states").hide();
+    // });
+
+
+    //code when we select a state from the dropdown
+    //id - multi-state
+    //todo- fill logic to either reuse the data stats from covidDATA or call the api again
+    $("#multi-state").change(function(){
+        event.preventDefault();
+        var selectedState = $(this).find(':selected').val().toUpperCase();
+         console.log(selectedState);
+         $(".searched-state").show();
+         $(".worst-five-states").hide();
+         $('.imgIndex').attr("src", statePicList[selectedState]);
+         selectedStateData(selectedState);
     });
+  });
 
-  //code when we hit the see more button
-  //see more button not working properly for second stage onwards
-  //Here we he to pass in the state field and then display more stats
-  // document.getElementById("uibutton").addEventListener("click",function(){
-  //  $(".searched-state").show();
-  //  $(".worst-five-states").hide();
-  // });
-
-
-   //code when we select a state from the dropdown
-   //id - multi-state
-   //todo- fill logic to either reuse the data stats from covidDATA or call the api again
-  // $("#multi-state").change(function(){
-  //     var selectedState = $(this).find(':selected').val();
-  //      console.log(selectedState);
-  //      $(".searched-state").show();
-  //      $(".worst-five-states").hide();
- //  });
-
-});
 
