@@ -45,12 +45,12 @@
             </div>
             <div class="row lower-row">
                 <h1 class="lower-row-text" id="row-text-title">COVID-19 Self-Assessment</h1>
-                <p class="lower-row-text">Taking this self-assessment helps you or your loved ones
+                <p class="lower-row-text">Taking this self-assessment helps you or your loved one
                     assess their exposure to COVID-19 in order to make informed medical decisions</p>
                 <p class="lower-row-text"><i class="envelope open outline icon"></i>This is purely
-                    informational, does not take the place of your doctor</p>
+                    informational and does not take the place of your doctor</p>
 
-                <div class="field" id="button-alignment" style="margin-top: 6.5vw; ">
+                <div class="field" style="margin-top: 6.5vw; ">
                     <div class="ui left floated button home-home" id="button-size">Home</div>
                     <div class="ui right floated button home-start" id="button-size">Start</div>
                 </div>
@@ -103,10 +103,25 @@
         color: whitesmoke;
     }
 
-    @media only screen and (max-width: 560px) {
-        #button-right {
-            margin-left: 5em;
+    .floatLeft {
+        display: flex;
+        margin-left: 0;
+        margin-right: 50%;
+
+    }
+
+    .floatRight {
+        display: flex;
+        justify-items: right;
+        margin-right: 0;
+        margin-left: 50%;
+    }
+
+    @media (max-width:550px) {
+        #button-size {
+            width: 70px;
         }
+
     }
 </style>
 
