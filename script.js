@@ -2,10 +2,8 @@
 
 
 $('document').ready(function () {
-    // $('#search').on('click', function (event) {
-    //     event.preventDefault();
-    var covidDATA = [];
 
+    var covidDATA = [];
 
     function topFIve() {
 
@@ -74,26 +72,6 @@ $('document').ready(function () {
             // creating a for loop to pick the top 5 states with the maximum count and displaying it in the front page
 
 
-            //     //for (var i = 0; i < 5; i++) {
-
-            //         //we will be plugging in the counts data into index.html here
-            //         //var totalCase = response.positive;
-            //         var totalCase = covidDATA[i].positive;
-            //         console.log(totalCase);
-            //         var hOne = $('<h6>').text(totalCase);
-
-            //         $('.totalCasesIndex0').append(hOne);
-
-            //         //var newCase = response.positiveIncrease;
-            //         var newCase = covidDATA[i].newcases;
-            //         var hTwo = $('<h6>').text(newCase);
-            //         $('.newCaseIndex0').append(hTwo);
-
-            //         // var totalDeath = response.death;
-            //         var totalDeath = covidDATA[i].death;
-            //         var hThree = $('<h6>').text(totalDeath);
-            //         $('.totalDeathIndex0').append(hThree);
-            //    // }
 
             //top state 1
             // $('.headerIndex0').append(sortedCovidDATA[0].state);
@@ -148,11 +126,6 @@ $('document').ready(function () {
         })
     }
 
-    //function clickedstate
-    //toggle the searched-state to show
-    //dynamically using javascript --add a class
-
-
     topFIve();
 
 
@@ -161,21 +134,67 @@ $('document').ready(function () {
    console.log(covidDATA[6]);
    //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
 
+   // An object that stores the images for the 50 states and the State Acronym
     var statePicList = {
         "CA": "./images/CA.png",
         "FL": "./images/FL.png",
         "NY": "./images/NY.png",
         "NJ": "./images/NJ.png",
-        "TX": "./images/TX.png"
+        "TX": "./images/TX.png",
+        "AK": "./images/AK.png",
+        "AL": "./images/AL.png",
+        "AR": "./images/AR.png",
+        "AZ": "./images/AZ.png",
+        "CO": "./images/CO.png",
+        "CT": "./images/CT.png",
+        "DC": "./images/DC.png",
+        "DE": "./images/DE.png",
+        "GA": "./images/GA.png",
+        "HI": "./images/HI.png",
+        "IA": "./images/IA.png",
+        "ID": "./images/ID.png",
+        "IL": "./images/IL.png",
+        "IN": "./images/IN.png",
+        "KS": "./images/KS.png",
+        "KY": "./images/KY.png",
+        "LA": "./images/LA.png",
+        "MA": "./images/MA.png",
+        "MD": "./images/MD.png",
+        "MN": "./images/MN.png",
+        "MI": "./images/MI.png",
+        "ME": "./images/ME.png",
+        "MO": "./images/MO.png",
+        "MS": "./images/MS.png",
+        "MT": "./images/MT.png",
+        "NC": "./images/NC.png",
+        "ND": "./images/ND.png",
+        "NE": "./images/NE.png",
+        "NH": "./images/NH.png",
+        "NM": "./images/NM.png",
+        "NV": "./images/NV.png",
+        "OH": "./images/OH.png",
+        "OK": "./images/OK.png",
+        "OR": "./images/OR.png",
+        "PA": "./images/PA.png",
+        "RI": "./images/RI.png",
+        "SC": "./images/SC.png",
+        "SD": "./images/SD.png",
+        "TN": "./images/TN.png",
+        "UT": "./images/UT.png",
+        "VA": "./images/VA.png",
+        "VT": "./images/VT.png",
+        "WA": "./images/WA.png",
+        "WI": "./images/WI.png",
+        "WV": "./images/WV.png",
+        "WY": "./images/WY.png",
     };
-    console.log(statePicList.CA);
+    console.log(statePicList.WY);
 
-
-    // document.getElementById("seemore").addEventListener("click",function(){
-    //  $(".searched-state").show();
-    //  $(".worst-five-states").hide();
-    // });
-
+    var count=0;
+    for (var property in statePicList){
+        count++;
+    }
+    console.log(count);
 
     $("#worst-five-states").on("click", function (event) {
         var elementclicked = event.target;
@@ -187,31 +206,21 @@ $('document').ready(function () {
             $(".searched-state").show();
             $(".worst-five-states").hide();
             $('.state-searched').text(state);
-
-
+            $('.imgIndex').attr("src", statePicList[state]);
         }
-
-
     });
-
-  //code when we hit the see more button
-  //see more button not working properly for second stage onwards
-  //Here we he to pass in the state field and then display more stats
-  // document.getElementById("uibutton").addEventListener("click",function(){
-  //  $(".searched-state").show();
-  //  $(".worst-five-states").hide();
-  // });
 
 
    //code when we select a state from the dropdown
    //id - multi-state
    //todo- fill logic to either reuse the data stats from covidDATA or call the api again
-  // $("#multi-state").change(function(){
-  //     var selectedState = $(this).find(':selected').val();
-  //      console.log(selectedState);
-  //      $(".searched-state").show();
-  //      $(".worst-five-states").hide();
- //  });
+  $("#multi-state").change(function(){
+      var selectedState = $(this).find(':selected').val().toUpperCase();
+       console.log(selectedState);
+       $(".searched-state").show();
+       $(".worst-five-states").hide();
+       $('.imgIndex').attr("src", statePicList[selectedState]);
+  });
 
 });
 
