@@ -200,8 +200,8 @@ $('document').ready(function () {
        $(".searched-state").show();
        $(".worst-five-states").hide();
        $('.imgIndex').attr("src", statePicList[selectedState]);
-       clearData();
-
+    //    clearData();
+// comment 
        //calling the function here to populate more stats
        selectedStateData(selectedState);
   });
