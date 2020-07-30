@@ -4,11 +4,13 @@ Our assignment for this project was to utilize CSS, HTML, JavaScript, API calls 
 
 Our application is a real time tracker utilizing the most up to date Covid-19 data we could find in order to provide users with the states currently reporting the most new cases as well as additional data about any state they search. We also provided three other pages full of useful data and resources for users. The CDC Updates page allows users to get the newest information available from the CDC without navigating away from our site. The Symptoms page provides users a test to take in order to assess any sympotms they may currently be experiencing (though we recomend that anyone with any level of concern seek medical attention and not rely on our test). The final page is a helpful links tab that shares several timely articles on subjects relevant to the pandemic.
 
+
 USER STORY:
 
   AS A concerned citizen
   I WANT to track covid cases near myself and my family
   SO THAT I know how at risk we are
+  
   
 ACCEPTANCE CRITERIA:
 
@@ -23,11 +25,15 @@ ACCEPTANCE CRITERIA:
  
 
 CSS FRAMEWORKS USED:
-  Pure CSS
+
+  Pure CSS,
   Semantic UI
   
+  
 LINK TO LIVE APPLICATION:
+
   https://courtneypaasch.github.io/hidden-hippos/
+
 
 TEAM MEMBERS AND LINK TO GITHUBS:
 
@@ -42,7 +48,7 @@ TEAM MEMBERS AND LINK TO GITHUBS:
   Revathy Venkataraman - https://github.com/flpipe
 
 
-
 SCREEN SHOT OF HOMEPAGE:
+
   <img width="1103" alt="Screen Shot 2020-07-30 at 5 56 04 PM" src="https://user-images.githubusercontent.com/40651335/88978630-13f16e80-d28e-11ea-90eb-a4693d8ce963.png">
 
