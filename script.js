@@ -41,7 +41,7 @@ $('document').ready(function () {
                 //total number of deaths in the state
                 sanitizedData["death"] = response[i].death;
                 sanitizedData["newdeaths"] = response[i].deathIncrease;
-                sanitizedData["hospital"] = response[i].hospitalized;
+                sanitizedData["hospital"] = response[i].hospitalizedCurrently;
                 sanitizedData["time"] = response[i].checkTimeEt;
 
                 covidDATA.push(sanitizedData);
@@ -214,20 +214,39 @@ $('document').ready(function () {
         for(var i = 0; i < sortedCovidDATA.length; i++){
             if(sortedCovidDATA[i].state === input){
                 console.log('reachedhere');
-                $('.searchedStats1').append($('<h4>').text(sortedCovidDATA[i].positive));
-                $('.searchedStats2').append($('<h4>').text(sortedCovidDATA[i].newcases));
-                $('.searchedStats3').append($('<h4>').text(sortedCovidDATA[i].death));
-                $('.searchedStats4').append($('<h4>').text(sortedCovidDATA[i].newdeaths));
-                $('.searchedStats5').append($('<h4>').text(sortedCovidDATA[i].hospital));
-                $('.searchedStats6').append($('<h4>').text(sortedCovidDATA[i].time));
+                // $('.searchedStats1').append($('<h4>').text(sortedCovidDATA[i].positive));
+                // $('.searchedStats2').append($('<h4>').text(sortedCovidDATA[i].newcases));
+                // $('.searchedStats3').append($('<h4>').text(sortedCovidDATA[i].death));
+                // $('.searchedStats4').append($('<h4>').text(sortedCovidDATA[i].newdeaths));
+                // $('.searchedStats5').append($('<h4>').text(sortedCovidDATA[i].hospital));
+                // $('.searchedStats6').append($('<h4>').text(sortedCovidDATA[i].time));
+                $('.searchedStats1').append($('<h4>').text('Total Cases: ' + (sortedCovidDATA[i].positive)));
+                $('.searchedStats2').append($('<h4>').text('New Cases : ' + (sortedCovidDATA[i].newcases)));
+                $('.searchedStats3').append($('<h4>').text('Total Death: ' + (sortedCovidDATA[i].death)));
+                $('.searchedStats4').append($('<h4>').text('Increased Death: ' + (sortedCovidDATA[i].newdeaths)));
+                $('.searchedStats5').append($('<h4>').text('Hospitalized Currently: ' + (sortedCovidDATA[i].hospital)));
+                $('.searchedStats5').append($('<h4>').text('Last Update: ' + (sortedCovidDATA[i].time)));
             }
     }
 }
 
+//  This will clear the data of the previous state everytime a new state is clicked 
+    function clearData(){
+        $('.searchedStats1').empty();
+        $('.searchedStats2').empty();
+        $('.searchedStats3').empty();
+        $('.searchedStats4').empty();
+        $('.searchedStats5').empty();
+        $('.searchedStats6').empty();
+
+    }
+
+
+    
     $("#worst-five-states").on("click", function (event) {
         var elementclicked = event.target;
         console.log(elementclicked);
-        var stateClicked =$(elementclicked).attr("state");
+        var stateClicked = $(elementclicked).attr("state");
         console.log(stateClicked);
 
         if (elementclicked.matches("button")) {
@@ -238,7 +257,7 @@ $('document').ready(function () {
 
             selectedStateData(stateClicked);
 
-            selectedStateData(stateClicked);
+           
             
             // var stateE = $('#cityData').val();
            
@@ -289,7 +308,9 @@ $('document').ready(function () {
        $(".worst-five-states").hide();
        $('.imgIndex').attr("src", statePicList[selectedState]);
 
+       clearData();
        selectedStateData(selectedState);
+       
 
   });
 
