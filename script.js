@@ -41,7 +41,7 @@ $('document').ready(function () {
                 //total number of deaths in the state
                 sanitizedData["death"] = response[i].death;
                 sanitizedData["newdeaths"] = response[i].deathIncrease;
-                sanitizedData["hospital"] = response[i].hospitalized;
+                sanitizedData["hospital"] = response[i].hospitalizedCurrently;
                 sanitizedData["time"] = response[i].checkTimeEt;
 
                 covidDATA.push(sanitizedData);
@@ -144,8 +144,8 @@ $('document').ready(function () {
 
     //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
 
-   console.log(covidDATA[6]);
-   //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
+    console.log(covidDATA[6]);
+    //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
 
    // An object that stores the images for the 50 states and the State Acronym
     var statePicList = {
@@ -214,20 +214,39 @@ $('document').ready(function () {
         for(var i = 0; i < sortedCovidDATA.length; i++){
             if(sortedCovidDATA[i].state === input){
                 console.log('reachedhere');
-                $('.searchedStats1').append($('<h4>').text(sortedCovidDATA[i].positive));
-                $('.searchedStats2').append($('<h4>').text(sortedCovidDATA[i].newcases));
-                $('.searchedStats3').append($('<h4>').text(sortedCovidDATA[i].death));
-                $('.searchedStats4').append($('<h4>').text(sortedCovidDATA[i].newdeaths));
-                $('.searchedStats5').append($('<h4>').text(sortedCovidDATA[i].hospital));
-                $('.searchedStats6').append($('<h4>').text(sortedCovidDATA[i].time));
+                // $('.searchedStats1').append($('<h4>').text(sortedCovidDATA[i].positive));
+                // $('.searchedStats2').append($('<h4>').text(sortedCovidDATA[i].newcases));
+                // $('.searchedStats3').append($('<h4>').text(sortedCovidDATA[i].death));
+                // $('.searchedStats4').append($('<h4>').text(sortedCovidDATA[i].newdeaths));
+                // $('.searchedStats5').append($('<h4>').text(sortedCovidDATA[i].hospital));
+                // $('.searchedStats6').append($('<h4>').text(sortedCovidDATA[i].time));
+                $('.searchedStats1').append($('<h4>').text('Total Cases: ' + (sortedCovidDATA[i].positive)));
+                $('.searchedStats2').append($('<h4>').text('New Cases : ' + (sortedCovidDATA[i].newcases)));
+                $('.searchedStats3').append($('<h4>').text('Total Death: ' + (sortedCovidDATA[i].death)));
+                $('.searchedStats4').append($('<h4>').text('Increased Death: ' + (sortedCovidDATA[i].newdeaths)));
+                $('.searchedStats5').append($('<h4>').text('Hospitalized Currently: ' + (sortedCovidDATA[i].hospital)));
+                $('.searchedStats5').append($('<h4>').text('Last Update: ' + (sortedCovidDATA[i].time)));
             }
     }
 }
 
+//  This will clear the data of the previous state everytime a new state is clicked 
+    function clearData(){
+        $('.searchedStats1').empty();
+        $('.searchedStats2').empty();
+        $('.searchedStats3').empty();
+        $('.searchedStats4').empty();
+        $('.searchedStats5').empty();
+        $('.searchedStats6').empty();
+
+    }
+
+
+    
     $("#worst-five-states").on("click", function (event) {
         var elementclicked = event.target;
         console.log(elementclicked);
-        var stateClicked =$(elementclicked).attr("state");
+        var stateClicked = $(elementclicked).attr("state");
         console.log(stateClicked);
 
         if (elementclicked.matches("button")) {
@@ -238,11 +257,44 @@ $('document').ready(function () {
 
             selectedStateData(stateClicked);
 
+           
+            
+            // var stateE = $('#cityData').val();
+           
         }
+    })
+            // $.ajax({
+            //     url: 'https://covidtracking.com/api/v1/states/' + state + '/current.json',
+            //     method: 'GET'
+            // }).then(function (response) {
+
+
+            //     console.log(response);
+
+            //     // $('.imgIndex0').attr("src", statePicList[response.state]);
+            //     // $('.headerIndex0').append($('<h2>').text(response.state));
+            //     // $('.totalCasesIndex0').append(sortedCovidDATA[0].positive);
+            //     $('#totalC').append($('<h4>').text(response.positive));
+            //     // $('.newCaseIndex0').append(sortedCovidDATA[0].newcases);
+            //     // $('.newCaseIndex0').append($('<h4>').text(response.newcases));
+            //     // $('.totalDeathIndex0').append($('<h4>').text(response.death));
+            //     // $('.buttonindex0').attr("state", (response.state));
+            // });
+
+
+        
+
+    //code when we hit the see more button
+    //see more button not working properly for second stage onwards
+    //Here we he to pass in the state field and then display more stats
+    // document.getElementById("uibutton").addEventListener("click",function(){
+    //  $(".searched-state").show();
+    //  $(".worst-five-states").hide();
+    // });
 
 
 
-    });
+    
 
 
    //code when we select a state from the dropdown
@@ -256,7 +308,9 @@ $('document').ready(function () {
        $(".worst-five-states").hide();
        $('.imgIndex').attr("src", statePicList[selectedState]);
 
+       clearData();
        selectedStateData(selectedState);
+       
 
   });
 
