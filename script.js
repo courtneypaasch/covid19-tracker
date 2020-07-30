@@ -1,8 +1,7 @@
 
-
-
 $('document').ready(function () {
 
+//creating out global array here
     var covidDATA = [];
 
     function topFIve() {
@@ -17,24 +16,22 @@ $('document').ready(function () {
             url: 'https://covidtracking.com/api/v1/states/current.json',
             method: 'GET'
         }).then(function (response) {
-            //console.log(response);
-            console.log(response[10]);
+            console.log(response);
+            //console.log(response[27]);
             //console.log(response[1].state);
             // console.log(response[1].positive);
             // console.log(response[1].total);
             // console.log(response[1].death);
             // console.log(response[1].date);
             var covidDATA = [];
-            //Here we create our own covidDATA array from
+            //Here we create our own covidDATA array from the ajax response
             for (var i = 0; i < response.length; i++) {
 
-
-                // make a new Object, store ONLY THE VALUES YOU WANT {state: response[i].state, positive: response[i].positive}
+                // make a new Object, store ONLY THE VALUES YOU WANT
                 // Then you PUSH this new object into an array.
                 var sanitizedData = new Object();
                 sanitizedData["date"] = response[i].date;
                 sanitizedData["state"] = response[i].state;
-                //sanitizedData["total"] = response[i].total;
                 //response-positive gives the total number of positive cases in the state
                 sanitizedData["positive"] = response[i].positive;
                 sanitizedData["newcases"] = response[i].positiveIncrease;
@@ -72,12 +69,7 @@ $('document').ready(function () {
             sortedCovidDATA = covidDATA.sort(compare);
             console.log(sortedCovidDATA);
 
-            // creating a for loop to pick the top 5 states with the maximum count and displaying it in the front page
-
-
-
-            //top state 1
-            // $('.headerIndex0').append(sortedCovidDATA[0].state);
+            // creating a for loop to pick the worst 5 states with the maximum count and displaying it in the front page
 
             for(var i = 0; i < 5; i++){
 
@@ -90,61 +82,15 @@ $('document').ready(function () {
 
             }
 
-            // $('.imgIndex0').attr("src", statePicList[sortedCovidDATA[0].state]);
-            // $('.headerIndex0').append($('<h2>').text(sortedCovidDATA[0].state));
-            // // $('.totalCasesIndex0').append(sortedCovidDATA[0].positive);
-            // $('.totalCasesIndex0').append($('<h4>').text(sortedCovidDATA[0].positive));
-            // // $('.newCaseIndex0').append(sortedCovidDATA[0].newcases);
-            // $('.newCaseIndex0').append($('<h4>').text(sortedCovidDATA[0].newcases));
-            // $('.totalDeathIndex0').append($('<h4>').text(sortedCovidDATA[0].death));
-            // $('.buttonindex0').attr("state", (sortedCovidDATA[0].state));
-
-            // //top state 2
-            // $('.imgIndex1').attr("src", statePicList[sortedCovidDATA[1].state]);
-            // $('.headerIndex1').append($('<h2>').text(sortedCovidDATA[1].state));
-            // $('.totalCasesIndex1').append($('<h4>').text(sortedCovidDATA[1].positive));
-            // $('.newCaseIndex1').append($('<h4>').text(sortedCovidDATA[1].newcases));
-            // $('.totalDeathIndex1').append($('<h4>').text(sortedCovidDATA[1].death));
-            // $('.buttonindex1').attr("state", (sortedCovidDATA[1].state));
-
-
-            // //top state 3
-            // $('.imgIndex2').attr("src", statePicList[sortedCovidDATA[2].state]);
-            // $('.headerIndex2').append($('<h2>').text(sortedCovidDATA[2].state));
-            // $('.totalCasesIndex2').append($('<h4>').text(sortedCovidDATA[2].positive));
-            // $('.newCaseIndex2').append($('<h4>').text(sortedCovidDATA[2].newcases));
-            // $('.totalDeathIndex2').append($('<h4>').text(sortedCovidDATA[2].death));
-            // $('.buttonindex2').attr("state", (sortedCovidDATA[2].state));
-
-
-            // //top state 4
-            // $('.imgIndex3').attr("src", statePicList[sortedCovidDATA[3].state]);
-            // $('.headerIndex3').append($('<h2>').text(sortedCovidDATA[3].state));
-            // $('.totalCasesIndex3').append($('<h4>').text(sortedCovidDATA[3].positive));
-            // $('.newCaseIndex3').append($('<h4>').text(sortedCovidDATA[3].newcases));
-            // $('.totalDeathIndex3').append($('<h4>').text(sortedCovidDATA[3].death));
-            // $('.buttonindex3').attr("state", (sortedCovidDATA[3].state));
-
-
-            // //top state 5
-            // $('.imgIndex4').attr("src", statePicList[sortedCovidDATA[4].state]);
-            // $('.headerIndex4').append($('<h2>').text(sortedCovidDATA[4].state));
-            // $('.totalCasesIndex4').append($('<h4>').text(sortedCovidDATA[4].positive));
-            // $('.newCaseIndex4').append($('<h4>').text(sortedCovidDATA[4].newcases));
-            // $('.totalDeathIndex4').append($('<h4>').text(sortedCovidDATA[4].death));
-            // $('.buttonindex4').attr("state", (sortedCovidDATA[4].state));
-
             //displaying the date for the data shown
             $('.date').append($('<h4>').text(sortedCovidDATA[0].date));
         })
     }
 
+    //instantiating the top five function here to populate worst 5 states
     topFIve();
 
 
-    //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
-
-    console.log(covidDATA[6]);
     //Images from this site into the images folder- https://www.pngegg.com/en/search?q=us+state+icons&page=2
 
    // An object that stores the images for the 50 states and the State Acronym
@@ -201,25 +147,12 @@ $('document').ready(function () {
         "WV": "./images/WV.png",
         "WY": "./images/WY.png",
     };
-    console.log(statePicList.WY);
 
-    // var count=0;
-    // for (var property in statePicList){
-    //     count++;
-    // }
-    // console.log(count);
-
-
+    // creating a function here to populate the more stats data from our sorted coviddata object
     function selectedStateData(input){
         for(var i = 0; i < sortedCovidDATA.length; i++){
             if(sortedCovidDATA[i].state === input){
-                console.log('reachedhere');
-                // $('.searchedStats1').append($('<h4>').text(sortedCovidDATA[i].positive));
-                // $('.searchedStats2').append($('<h4>').text(sortedCovidDATA[i].newcases));
-                // $('.searchedStats3').append($('<h4>').text(sortedCovidDATA[i].death));
-                // $('.searchedStats4').append($('<h4>').text(sortedCovidDATA[i].newdeaths));
-                // $('.searchedStats5').append($('<h4>').text(sortedCovidDATA[i].hospital));
-                // $('.searchedStats6').append($('<h4>').text(sortedCovidDATA[i].time));
+                //console.log('reachedhere');
                 $('.searchedStats1').append($('<h4>').text('Total Cases: ' + (sortedCovidDATA[i].positive)));
                 $('.searchedStats2').append($('<h4>').text('New Cases : ' + (sortedCovidDATA[i].newcases)));
                 $('.searchedStats3').append($('<h4>').text('Total Death: ' + (sortedCovidDATA[i].death)));
@@ -230,7 +163,7 @@ $('document').ready(function () {
     }
 }
 
-//  This will clear the data of the previous state everytime a new state is clicked 
+//  This will clear the data of the previous state everytime a new state is clicked
     function clearData(){
         $('.searchedStats1').empty();
         $('.searchedStats2').empty();
@@ -238,11 +171,10 @@ $('document').ready(function () {
         $('.searchedStats4').empty();
         $('.searchedStats5').empty();
         $('.searchedStats6').empty();
-
     }
 
-
-    
+    // on the worst five states, if we click the see more button, then more stats are shown
+    //we hide the main section and display the more stats div here.
     $("#worst-five-states").on("click", function (event) {
         var elementclicked = event.target;
         console.log(elementclicked);
@@ -252,54 +184,15 @@ $('document').ready(function () {
         if (elementclicked.matches("button")) {
             $(".searched-state").show();
             $(".worst-five-states").hide();
-            $('.state-searched').text(stateClicked);
+           // $('.state-searched').text(stateClicked);
             $('.imgIndex').attr("src", statePicList[stateClicked]);
-
+            //calling the function here to populate more stats
             selectedStateData(stateClicked);
-
-           
-            
-            // var stateE = $('#cityData').val();
-           
         }
     })
-            // $.ajax({
-            //     url: 'https://covidtracking.com/api/v1/states/' + state + '/current.json',
-            //     method: 'GET'
-            // }).then(function (response) {
 
-
-            //     console.log(response);
-
-            //     // $('.imgIndex0').attr("src", statePicList[response.state]);
-            //     // $('.headerIndex0').append($('<h2>').text(response.state));
-            //     // $('.totalCasesIndex0').append(sortedCovidDATA[0].positive);
-            //     $('#totalC').append($('<h4>').text(response.positive));
-            //     // $('.newCaseIndex0').append(sortedCovidDATA[0].newcases);
-            //     // $('.newCaseIndex0').append($('<h4>').text(response.newcases));
-            //     // $('.totalDeathIndex0').append($('<h4>').text(response.death));
-            //     // $('.buttonindex0').attr("state", (response.state));
-            // });
-
-
-        
-
-    //code when we hit the see more button
-    //see more button not working properly for second stage onwards
-    //Here we he to pass in the state field and then display more stats
-    // document.getElementById("uibutton").addEventListener("click",function(){
-    //  $(".searched-state").show();
-    //  $(".worst-five-states").hide();
-    // });
-
-
-
-    
-
-
-   //code when we select a state from the dropdown
+   //code when we select a state from the dropdown, call the function to populate data accordingly
    //id - multi-state
-   //todo- fill logic to either reuse the data stats from covidDATA or call the api again
   $("#multi-state").change(function(){
       event.preventDefault();
       var selectedState = $(this).find(':selected').val().toUpperCase();
@@ -307,11 +200,10 @@ $('document').ready(function () {
        $(".searched-state").show();
        $(".worst-five-states").hide();
        $('.imgIndex').attr("src", statePicList[selectedState]);
-
        clearData();
-       selectedStateData(selectedState);
-       
 
+       //calling the function here to populate more stats
+       selectedStateData(selectedState);
   });
 
 });
