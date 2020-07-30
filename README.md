@@ -29,10 +29,15 @@ CSS Frameworks Used:
 Team members and their Githubs:
 
   Rayan Ahmedy - https://github.com/rahmedy
+  
   Francis Anyaegbu - https://github.com/anyaegbufrancis
+  
   Courtney Paasch - https://github.com/courtneypaasch
+  
   Hailey Nicole - https://github.com/imhaileynicole
+  
   Revathy Venkataraman - https://github.com/flpipe
+  
 
 
 Link to the running application:
