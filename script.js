@@ -13,7 +13,7 @@ $('document').ready(function () {
         // we loop through the response and grab only the data elements that we want and push into a new object and then push that into the covidDATA array
 
         $.ajax({
-            url: 'https://covidtracking.com/api/v1/states/current.json',
+            url: 'https://api.covidtracking.com/v1/states/current.json',
             method: 'GET'
         }).then(function (response) {
             console.log(response);
