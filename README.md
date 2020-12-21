@@ -1,5 +1,11 @@
 # Real Time Covid-19 Tracker
 
+## LINK TO LIVE APPLICATION:
+
+  https://rahmedy.github.io/Covid-19-Tracker/
+  
+  ## Description 
+
 Our assignment for this project was to utilize CSS, HTML, JavaScript, API calls and JQuery to develop a working application on a topic of our choice from scratch. As a team we conceived and executed a design around the global pandemic of Covid-19. We used API's to integrate data and provide users with useful Covid-19 data. This was also a test of our ability to utilize GitHub and agile development methodologies to be collaborative and be able to work together in implementing features and fix bugs in the branches. 
 
 Our application is a real time tracker utilizing the most up to date Covid-19 data we could find in order to provide users with the states currently reporting the most new cases as well as additional data about any state they search. We also provided three other pages full of useful data and resources for users. The CDC Updates page allows users to get the newest information available from the CDC without navigating away from our site. The Symptoms page provides users a test to take in order to assess any sympotms they may currently be experiencing (though we recomend that anyone with any level of concern seek medical attention and not rely on our test). The final page is a helpful links tab that shares several timely articles on subjects relevant to the pandemic.
@@ -29,10 +35,6 @@ CSS FRAMEWORKS USED:
   Pure CSS,
   Semantic UI
   
-  
-LINK TO LIVE APPLICATION:
-
-  https://courtneypaasch.github.io/hidden-hippos/
 
 
 TEAM MEMBERS AND LINK TO GITHUBS:
